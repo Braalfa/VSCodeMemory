@@ -1,7 +1,6 @@
 //
-// Created by usuario on 22/5/20.
+// Created by usuario on 10/6/20.
 //
-
 #ifndef VSCODEMEMORY_VSPTR_H
 #define VSCODEMEMORY_VSPTR_H
 

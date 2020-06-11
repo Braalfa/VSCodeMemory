@@ -1,6 +1,7 @@
 //
-// Created by usuario on 22/5/20.
+// Created by usuario on 10/6/20.
 //
+
 
 #include "GarbageCollector.h"
 #include "iostream"
@@ -8,6 +9,7 @@
 
 
 GarbageCollector* GarbageCollector::instance = 0;
+GarbageType GarbageCollector::type;
 
 
 
@@ -25,16 +27,13 @@ GarbageCollector* GarbageCollector::getInstance()
     return instance;
 }
 
-GarbageCollector *GarbageCollector::setType(int newtype)
-{
-}
-
 List * GarbageCollector::getList() {
     return this->listGarbageCollector;
 }
 
-void GarbageCollector::setClient(Client client){
-    this->client = &client;
+
+void GarbageCollector::setClient(Client *client){
+    this->client = client;
 }
 
 class LocalGarbageCollector : public GarbageCollector {
@@ -80,18 +79,36 @@ public:
 
 };
 
-
 // Factory method to create objects of different types.
 // Change is required only in this function to create a new object type
+
 GarbageCollector* GarbageCollector::Create() {
-    if (0 == 0)
+    if (type == Local)
         return new LocalGarbageCollector();
-    else if (0== 1)
+    else if (type== Remote)
         return new RemoteGarbageCollector();
     else return NULL;
 }
 
+void GarbageCollector::setType(GarbageType newtype){
+    if(instance!=nullptr){
+        if(newtype==Local){
+            instance = new LocalGarbageCollector();
+        }else{
+            instance = new RemoteGarbageCollector();
+        }
+    }
+    type=newtype;
+}
 
-int GarbageCollector::getType(){
-    return 0;
+void GarbageCollector::runthread() {
+    this_thread::sleep_for (chrono::seconds(2));
+    Node *present = getList()->getFirst();
+    while (present != nullptr){
+        if(present->getReferences() == 0){
+            getList()->deleteNode(present->getID());
+
+        }
+        present = present->next;
+    }
 }

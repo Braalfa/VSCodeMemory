@@ -1,5 +1,5 @@
 //
-// Created by Juan Solis on 25/5/20.
+// Created by usuario on 10/6/20.
 //
 
 #ifndef VSCODEMEMORY_LIST_H
@@ -10,6 +10,7 @@
 
 class List {
     Node *first;
+
 public:
     Node *getFirst();
     List();

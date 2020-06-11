@@ -1,7 +1,3 @@
-//
-// Created by usuario on 25/5/20.
-//
-
 #include "List.h"
 #include "iostream"
 

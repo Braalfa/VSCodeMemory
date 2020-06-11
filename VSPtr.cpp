@@ -1,5 +1,5 @@
 //
-// Created by usuario on 22/5/20.
+// Created by usuario on 10/6/20.
 //
 
 #include "VSPtr.h"
@@ -11,7 +11,7 @@ VSPtr<T> VSPtr<T>::New()
 {
     VSPtr<T> newVSPtr= new VSPtr<T>;
     newVSPtr.references = 1;
-    if(garbageCollector->getType()==0){
+    if(GarbageCollector::type==Local){
         newVSPtr.ptr = nullptr;
     }
     newVSPtr.ID = garbageCollector->addNode(newVSPtr.ptr, &newVSPtr.ptr,type_info(*newVSPtr.ptr).name());
@@ -106,4 +106,3 @@ void VSPtr<T>::addReferences()
 {
     this->references = references +1;
 }
-
