@@ -9,13 +9,12 @@ GarbageCollector* garbageCollector = GarbageCollector::getInstance();
 template<class T>
 VSPtr<T> VSPtr<T>::New()
 {
-    VSPtr<T> newVSPtr=malloc(sizeof(VSPtr<T>));
-
-    if(garbageCollector->getType()==Local){
-        newVSPtr.ptr = malloc(sizeof(T));
+    VSPtr<T> newVSPtr= new VSPtr<T>;
+    newVSPtr.references = 1;
+    if(garbageCollector->getType()==0){
+        newVSPtr.ptr = nullptr;
     }
-
-    newVSPtr.ID = garbageCollector->addNode(newVSPtr.ptr, &newVSPtr.ptr,typeid(newVSPtr.ptr).name());
+    newVSPtr.ID = garbageCollector->addNode(newVSPtr.ptr, &newVSPtr.ptr,type_info(*newVSPtr.ptr).name());
     return newVSPtr;
 }
 
@@ -80,6 +79,9 @@ void VSPtr<T>::operator=(T newValue) {
 
 template<class T>
 void VSPtr<T>::operator=(VSPtr vsptr) {
+    if(references == 1){
+        garbageCollector->deleteVS(getID());
+    }
     garbageCollector->deleteReferences(ID);
     ptr = vsptr.ptr;
     ID = vsptr.ID;
@@ -87,4 +89,21 @@ void VSPtr<T>::operator=(VSPtr vsptr) {
 }
 
 
+template <class T>
+int VSPtr<T>::getReferences()
+{
+    return this->references;
+}
+
+template<class T>
+void VSPtr<T>::deleteReferences()
+{
+    this->references = references - 1;
+}
+
+template<class T>
+void VSPtr<T>::addReferences()
+{
+    this->references = references +1;
+}
 

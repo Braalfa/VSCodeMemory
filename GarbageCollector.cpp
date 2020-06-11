@@ -3,8 +3,14 @@
 //
 
 #include "GarbageCollector.h"
-#include "client.h"
+#include "iostream"
+
+
+
 GarbageCollector* GarbageCollector::instance = 0;
+
+
+
 
 GarbageCollector::GarbageCollector(){}
 
@@ -19,19 +25,21 @@ GarbageCollector* GarbageCollector::getInstance()
     return instance;
 }
 
-GarbageCollector *GarbageCollector::setType(GarbageType newtype)
+GarbageCollector *GarbageCollector::setType(int newtype)
 {
-    type = newtype;
 }
 
 List * GarbageCollector::getList() {
     return this->listGarbageCollector;
 }
 
+void GarbageCollector::setClient(Client client){
+    this->client = &client;
+}
 
 class LocalGarbageCollector : public GarbageCollector {
 public:
-    LocalGarbageCollector();
+    LocalGarbageCollector(){};
 
     void deleteReferences(int ID){
         getList()->deleteReferences(ID);
@@ -45,14 +53,12 @@ public:
     void setMemory(void *dir, int ID, string value){
         return getList()->getNode(ID).setDirMemory(dir);
     }
-    void update(string ID, string value){}
+    void deleteVS(int ID){}
 };
 
 class RemoteGarbageCollector : public GarbageCollector {
-private:
-    Client* client=new Client;
 public:
-    RemoteGarbageCollector();
+    RemoteGarbageCollector(){};
 
     void deleteReferences(int ID){
         client->delRef(to_string(ID));
@@ -66,20 +72,26 @@ public:
     void setMemory(void* dir, int ID, string value){
         client->update(to_string(ID), value);
     }
+    void deleteVS(int ID)
+    {
+        string id = to_string(ID);
+
+    }
+
 };
 
 
 // Factory method to create objects of different types.
 // Change is required only in this function to create a new object type
 GarbageCollector* GarbageCollector::Create() {
-    if (type == Local)
+    if (0 == 0)
         return new LocalGarbageCollector();
-    else if (type= Remote)
+    else if (0== 1)
         return new RemoteGarbageCollector();
     else return NULL;
 }
 
 
-GarbageType GarbageCollector::getType(){
-    return type;
+int GarbageCollector::getType(){
+    return 0;
 }

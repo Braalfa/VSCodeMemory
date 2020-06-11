@@ -19,6 +19,7 @@ public:
     void addRef(string id);
     void deleteRef(string id);
     int findRow(string id);
+    void update(string id, string value);
 
 };
 

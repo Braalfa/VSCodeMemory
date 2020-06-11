@@ -1,5 +1,5 @@
 #include "heap.h"
-#include <QTableView>
+#include <QTableWidget>
 #include <string>
 #include <QObject>
 #include <QModelIndex>
@@ -50,6 +50,11 @@ void Heap::addRef(string id){
 void Heap::deleteRef(string id){
     int row=this->findRow(id);
     tableWidget->setItem(row,4,new QTableWidgetItem(tableWidget->item(row,0)->text().toInt()-1));
+}
+
+void Heap::update(string id, string value){
+    int row=this->findRow(id);
+    tableWidget->setItem(row,3,new QTableWidgetItem(QString::fromStdString(value)));
 }
 
 int Heap::findRow(string id){

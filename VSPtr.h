@@ -17,6 +17,8 @@ class VSPtr
 private:
     T *ptr;
     int ID;
+    int references;
+
 public:
     //Y new
     static VSPtr<T> New();
@@ -28,6 +30,10 @@ public:
 
     int getID();
     void setID(int newID);
+
+    int getReferences();
+    void deleteReferences();
+    void addReferences();
 
     T &operator * ();
     T *operator -> ();

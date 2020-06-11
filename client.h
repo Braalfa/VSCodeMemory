@@ -1,14 +1,13 @@
 #ifndef CLIENT_H
 #define CLIENT_H
 #include <string>
-#include <json.h>
+#include "json.h"
+#include "heap.h"
 
 using namespace std;
-
 class Client
 {
 public:
-
     Client();
     void sendStrMessage(string messageSt);
     string askAnswer();
@@ -19,10 +18,13 @@ public:
     void delRef(string id);
     void update(string id, string value);
     int logIn();
+
+    void setHeap(Heap heap);
     string newVSptr(string data, string type);
+    Heap* getHeap();
 
 private:
-
+    Heap *heap;
     string password;
     string user;
     string ip;

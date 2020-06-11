@@ -6,8 +6,9 @@
 #include "client.h"
 #include <netinet/in.h>
 #include <iostream>
-#include <hashlib++/hashlibpp.h>
-
+#include "hl_md5wrapper.h"
+#include "GarbageCollector.h"
+#include "heap.h"
 
 
 #include <string>
@@ -16,6 +17,7 @@ using namespace std;
 Client::Client()
 {
     sock=0;
+    GarbageCollector::getInstance()->setClient(*this);
 }
 
 string Client::newVSptr(string data, string type){
@@ -27,19 +29,31 @@ string Client::newVSptr(string data, string type){
     string json = Json::writeString(wbuilder, root);
     this->sendStrMessage("new-vs;"+json+";");
     string id = this->askAnswer();
+
+    sendStrMessage("get-address;"+id+";");
+
+    heap->addVSptr(id, askAnswer() , type, data );
     return id;
+}
+
+Heap* Client::getHeap()
+{
+    return this->heap;
 }
 
 void Client::delRef(string id){
     this->sendStrMessage("delete-ref;"+id+";");
+    heap->deleteRef(id);
 }
 
 void Client::addRef(string id){
     this->sendStrMessage("new-ref;"+id+";");
+    heap->addRef(id);
 }
 
 void Client::update(string id, string value){
     this->sendStrMessage("update;"+id+";"+value+";");
+    heap->update(id, value);
 }
 
 void Client::getType(string id, string value){
@@ -103,11 +117,7 @@ int Client::logIn()
 
     serv_addr.sin_family = AF_INET;
 
-    try{
-        serv_addr.sin_port = htons(std::stoi(port));
-    }catch(std::invalid_argument& e){
-        return -1;
-    }
+    serv_addr.sin_port = htons(std::stoi(port));
 
     // Convert IPv4 and IPv6 addresses from text to binary form
     if(inet_pton(AF_INET, ip.c_str(), &serv_addr.sin_addr)<=0)
@@ -132,4 +142,9 @@ int Client::logIn()
         this->saveCredentials(answer);
         return 0;
     }
+}
+
+void Client::setHeap(Heap heap)
+{
+    this->heap = new Heap(heap);
 }
