@@ -7,28 +7,24 @@
 
 using namespace std;
 
-template<typename  T>
-TNode<T>::TNode()
+TNode::TNode()
 {
     next = nullptr;
 }
 
 
-template<typename  T>
-TNode<T>::TNode(T data)
+TNode::TNode(string data)
 {
     next = nullptr;
     value = data;
 }
 
 
-template<typename  T>
-T TNode<T>::getValue()
+string TNode::getValue()
 {
     return  value;
 }
 
-template<typename  T>
-void TNode<T>::setValue(T data) {
+void TNode::setValue(string data) {
     this->value = data;
 }

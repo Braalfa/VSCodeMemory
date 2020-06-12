@@ -1,6 +1,7 @@
 //
-// Created by usuario on 10/6/20.
+// Created by usuario on 22/5/20.
 //
+
 #ifndef VSCODEMEMORY_VSPTR_H
 #define VSCODEMEMORY_VSPTR_H
 
@@ -17,7 +18,8 @@ private:
     T *ptr;
     int ID;
     int references;
-
+    string type;
+    string value;
 public:
     //Y new
     static VSPtr<T> New();
@@ -44,3 +46,5 @@ public:
 };
 
 #endif //VSCODEMEMORY_VSPTR_H
+
+

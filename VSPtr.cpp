@@ -1,20 +1,23 @@
 //
-// Created by usuario on 10/6/20.
+// Created by usuario on 22/5/20.
 //
 
 #include "VSPtr.h"
 #include <typeinfo>
-GarbageCollector* garbageCollector = GarbageCollector::getInstance();
+#include <GarbageCollector.h>
 
 template<class T>
 VSPtr<T> VSPtr<T>::New()
 {
-    VSPtr<T> newVSPtr= new VSPtr<T>;
+    VSPtr<T> newVSPtr= *new VSPtr;
     newVSPtr.references = 1;
+    GarbageCollector::setType(Local);
     if(GarbageCollector::type==Local){
         newVSPtr.ptr = nullptr;
     }
-    newVSPtr.ID = garbageCollector->addNode(newVSPtr.ptr, &newVSPtr.ptr,type_info(*newVSPtr.ptr).name());
+    string name = typeid(*newVSPtr.ptr).name();
+    GarbageCollector g=* GarbageCollector::getInstance();
+    newVSPtr.ID = g.addNode(newVSPtr.ptr, "",name);
     return newVSPtr;
 }
 
@@ -72,20 +75,22 @@ T VSPtr<T>::operator&() {
 
 template<class T>
 void VSPtr<T>::operator=(T newValue) {
-    ptr = new T(newValue);
 
-    garbageCollector->getList()->setMemory(ptr);
+    void *vp = static_cast<void*>(ptr);
+    value = *static_cast<std::string*>(vp);
+    ptr= &newValue;
+    GarbageCollector::getInstance()->setMemory(ptr, ID, value);
 }
 
 template<class T>
 void VSPtr<T>::operator=(VSPtr vsptr) {
     if(references == 1){
-        garbageCollector->deleteVS(getID());
+        GarbageCollector::getInstance()->deleteVS(getID());
     }
-    garbageCollector->deleteReferences(ID);
+    GarbageCollector::getInstance()->deleteReferences(ID);
     ptr = vsptr.ptr;
     ID = vsptr.ID;
-    garbageCollector->addReferences(vsptr.ID);
+    GarbageCollector::getInstance()->addReferences(vsptr.ID);
 }
 
 
@@ -106,3 +111,9 @@ void VSPtr<T>::addReferences()
 {
     this->references = references +1;
 }
+
+template class VSPtr<int>;
+template class VSPtr<std::string>;
+template class VSPtr<bool>;
+template class VSPtr<float>;
+template class VSPtr<double>;

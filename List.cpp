@@ -1,3 +1,7 @@
+//
+// Created by usuario on 25/5/20.
+//
+
 #include "List.h"
 #include "iostream"
 
@@ -8,9 +12,10 @@ Node *List::getFirst()  {
     return first;
 }
 
-void List::addNode(void *dirMemory) {
+int List::addNode(void *dirMemory) {
     if(this->first == nullptr){
         this->first = new Node(dirMemory);
+        return 2;
     }
     else{
         Node *present = this->first;
@@ -18,6 +23,8 @@ void List::addNode(void *dirMemory) {
             present = present->next;
         }
         present->next = new Node(dirMemory);
+        return 2;
+
     }
 }
 
@@ -68,6 +75,7 @@ Node List::getNode(int ID) {
         }
         exit(1);
     }
+    return present;
 }
 
 void List::deleteReferences(int ID) {

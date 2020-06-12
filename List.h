@@ -1,5 +1,5 @@
 //
-// Created by usuario on 10/6/20.
+// Created by Juan Solis on 25/5/20.
 //
 
 #ifndef VSCODEMEMORY_LIST_H
@@ -10,11 +10,10 @@
 
 class List {
     Node *first;
-
 public:
     Node *getFirst();
     List();
-    void addNode(void *dirMemory);
+    int addNode(void *dirMemory);
     void setMemory(void *dirMemory, int ID);
     void deleteNode(int ID);
     Node getNode(int ID);

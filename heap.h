@@ -1,15 +1,9 @@
-//
-// Created by usuario on 10/6/20.
-//
-
 #ifndef VSCODEMEMORYLIB_HEAP_H
 #define VSCODEMEMORYLIB_HEAP_H
 
 
 #include <string>
-#include "TNode.cpp"
 #include "TNode.h"
-#include "TList.cpp"
 #include "TList.h"
 using namespace std;
 
@@ -22,11 +16,11 @@ private:
 public:
     static Heap *getInstance();
 
-    TList<string> idList;
-    TList<string> addreesList;
-    TList<string> typeList;
-    TList<string> dataList;
-    TList<string> referencesList;
+    TList idList;
+    TList addreesList;
+    TList typeList;
+    TList dataList;
+    TList referencesList;
     void addVSptr(string id, string address, string type, string data,string references);
     void deleteVSptr(string id);
     void addRef(string id);

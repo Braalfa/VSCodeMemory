@@ -1,7 +1,6 @@
 //
-// Created by usuario on 10/6/20.
+// Created by usuario on 22/5/20.
 //
-
 
 #include "GarbageCollector.h"
 #include "iostream"
@@ -9,15 +8,9 @@
 
 
 GarbageCollector* GarbageCollector::instance = 0;
-GarbageType GarbageCollector::type;
-
-
-
-
-GarbageCollector::GarbageCollector(){}
-
-
-
+GarbageCollector::GarbageCollector(){
+    listGarbageCollector= new List;
+}
 GarbageCollector* GarbageCollector::getInstance()
 {
     if (instance == 0)
@@ -31,47 +24,50 @@ List * GarbageCollector::getList() {
     return this->listGarbageCollector;
 }
 
-
-void GarbageCollector::setClient(Client *client){
-    this->client = client;
-}
-
 class LocalGarbageCollector : public GarbageCollector {
 public:
-    LocalGarbageCollector(){};
+    LocalGarbageCollector(){
+        listGarbageCollector= new List;
+    };
 
-    void deleteReferences(int ID){
+    void deleteReferences(int ID) override{
         getList()->deleteReferences(ID);
     }
-    int addNode(void* ptr, string value, string type){
-        getList()->addNode(ptr);
+
+    int addNode(void* ptr, string value, string type) override{
+        int id =getList()->addNode(ptr);
+        Heap::getInstance()->addVSptr(to_string(id), *static_cast<std::string*>(ptr), type, value, "1" );
+        return id;
     }
-    void addReferences(int ID){
+    void addReferences(int ID) override{
         getList()->addReferences(ID);
     }
-    void setMemory(void *dir, int ID, string value){
+    void setMemory(void *dir, int ID, string value) override {
+        string ptrS;
         return getList()->getNode(ID).setDirMemory(dir);
     }
-    void deleteVS(int ID){}
+    void deleteVS(int ID)override{}
 };
 
 class RemoteGarbageCollector : public GarbageCollector {
 public:
-    RemoteGarbageCollector(){};
+    RemoteGarbageCollector(){
+        listGarbageCollector= new List;
+    };
 
-    void deleteReferences(int ID){
+    void deleteReferences(int ID)override{
         client->delRef(to_string(ID));
     }
-    void addReferences(int ID){
+    void addReferences(int ID)override{
         client->addRef(to_string(ID));
     }
-    int addNode(void *ptr, string value, string type){
+    int addNode(void *ptr, string value, string type)override{
         client->newVSptr(value, type);
     }
-    void setMemory(void* dir, int ID, string value){
+    void setMemory(void* dir, int ID, string value)override{
         client->update(to_string(ID), value);
     }
-    void deleteVS(int ID)
+    void deleteVS(int ID)override
     {
         string id = to_string(ID);
 
@@ -99,16 +95,4 @@ void GarbageCollector::setType(GarbageType newtype){
         }
     }
     type=newtype;
-}
-
-void GarbageCollector::runthread() {
-    this_thread::sleep_for (chrono::seconds(2));
-    Node *present = getList()->getFirst();
-    while (present != nullptr){
-        if(present->getReferences() == 0){
-            getList()->deleteNode(present->getID());
-
-        }
-        present = present->next;
-    }
 }

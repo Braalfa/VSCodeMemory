@@ -11,22 +11,21 @@
 #include <string>
 #include <stdlib.h>
 #include "TNode.h"
-
+#include <string>
 using namespace std;
 
-template <class T>
 class TList
 {
 private:
-    TNode<T> *first;
+    TNode *first;
 public:
     int largo;
     TList();
-    TNode<T> getFirst();
-    TNode<T> getNodoPos(int pos);
-    TNode<T> getNodoVal(T val);
-    int getPos(T value);
-    void addLast(T data);
+    TNode getFirst();
+    TNode getNodoPos(int pos);
+    TNode getNodoVal(string val);
+    int getPos(string value);
+    void addLast(string data);
     void deletePos(int pos);
     void printList();
 };

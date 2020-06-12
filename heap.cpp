@@ -1,8 +1,4 @@
-//
-// Created by usuario on 10/6/20.
-//
-
-#include "Heap.h"
+#include "heap.h"
 
 Heap* Heap::instance = nullptr;
 
@@ -55,41 +51,25 @@ void Heap::update(string id, string value){
 
 string Heap::updatePanelList() {
     string newPanelList;
-    int pos;
-    while (pos != idList.largo-1){
+    int pos=0;
+    while (pos != idList.largo){
         newPanelList += idList.getNodoPos(pos).getValue();
-        newPanelList += ";";
-        pos +=1;
-    }
-    pos = 0;
-    while (pos != idList.largo-1){
         newPanelList += addreesList.getNodoPos(pos).getValue();
-        newPanelList += ";";
-        pos +=1;
-    }
-    pos = 0;
-    while (pos != idList.largo-1) {
         newPanelList += typeList.getNodoPos(pos).getValue();
-        newPanelList += ";";
-        pos +=1;
-    }
-    pos = 0;
-    while (pos != idList.largo-1){
         newPanelList += dataList.getNodoPos(pos).getValue();
+        newPanelList += referencesList.getNodoPos(pos).getValue();
+
         newPanelList += ";";
         pos +=1;
     }
-    pos = 0;
-    while (pos != idList.largo-1) {
-        newPanelList += referencesList.getNodoPos(pos).getValue();
-        newPanelList += ";";
-    }
+
     return newPanelList;
 }
 
 Heap::Heap() {
-
+    idList = *new TList;
+    addreesList = *new TList;
+    typeList = *new TList;
+    dataList = *new TList;
+    referencesList = *new TList;
 }
-
-
-#include "Heap.h"

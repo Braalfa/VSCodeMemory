@@ -5,17 +5,18 @@
 #ifndef VSCODEMEMORYLIB_TNODE_H
 #define VSCODEMEMORYLIB_TNODE_H
 
+#include <string>
+using namespace std;
 
-template<class T>
 class TNode {
 private:
-    T value;
+    string value;
 public:
     TNode *next;
     TNode();
-    TNode(T value);
-    T getValue();
-    void setValue(T value);
+    TNode(string value);
+    string getValue();
+    void setValue(string value);
 };
 
 

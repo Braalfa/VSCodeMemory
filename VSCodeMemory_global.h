@@ -1,0 +1,12 @@
+#ifndef VSCODEMEMORY_GLOBAL_H
+#define VSCODEMEMORY_GLOBAL_H
+
+#include <QtCore/qglobal.h>
+
+#if defined(VSCODEMEMORY_LIBRARY)
+#  define VSCODEMEMORY_EXPORT Q_DECL_EXPORT
+#else
+#  define VSCODEMEMORY_EXPORT Q_DECL_IMPORT
+#endif
+
+#endif // VSCODEMEMORY_GLOBAL_H
