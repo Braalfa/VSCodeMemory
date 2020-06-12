@@ -35,19 +35,18 @@ protected:
 public:
     List * getList();
 
-    virtual void setClient(Client client);
-    virtual void deleteReferences(int ID);
-    virtual void addReferences(int ID);
-    virtual int addNode( void* ptr, string value, string type);
-    virtual void setMemory(void *dirMemory, int ID, string value);
-    virtual void deleteVS(int ID);
+    void setClient(Client client);
+    void deleteReferences(int ID);
+    void addReferences(int ID);
+    int addNode( void* ptr, string type);
+    void setMemory(void *dirMemory, int ID, string type);
+    void deleteVS(int ID);
 
     static GarbageType type;
     static void setType(GarbageType newtype);
     static GarbageCollector* Create();
     static GarbageCollector* getInstance();
 };
-
 
 
 #endif //VSCODEMEMORY_GARBAGECOLLECTOR_H

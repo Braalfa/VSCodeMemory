@@ -15,7 +15,7 @@ Node *List::getFirst()  {
 int List::addNode(void *dirMemory) {
     if(this->first == nullptr){
         this->first = new Node(dirMemory);
-        return 2;
+        return this->first->getID();
     }
     else{
         Node *present = this->first;
@@ -23,7 +23,7 @@ int List::addNode(void *dirMemory) {
             present = present->next;
         }
         present->next = new Node(dirMemory);
-        return 2;
+        return present->next->getID();
 
     }
 }

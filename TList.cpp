@@ -29,7 +29,7 @@ TNode TList::getNodoVal(string val) {
 
 TNode TList::getNodoPos(int pos) {
     TNode *present = this->first;
-    int i;
+    int i=0;
     while (i != pos){
         present = present->next;
         i+=1;
@@ -99,6 +99,3 @@ void TList::printList()
     }
     cout<<"}"<<endl;
 }
-
-
-

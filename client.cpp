@@ -16,51 +16,36 @@ using namespace std;
 
 Client::Client(){
     sock=0;
-    this->heap=nullptr;
     GarbageCollector::getInstance()->setClient(*this);
 }
 
-Client::Client(Heap *heap)
-{
-    sock=0;
-    this->heap=heap;
-    GarbageCollector::getInstance()->setClient(*this);
-}
 
-string Client::newVSptr(string data, string type){
+
+string Client::newVSptr(string type){
     Json::Value root;
     Json::StreamWriterBuilder wbuilder;
-    wbuilder["data"] = data;
+    wbuilder["data"] = "0";
     wbuilder["type"] = type;
 
     string json = Json::writeString(wbuilder, root);
     this->sendStrMessage("new-vs;"+json+";");
     string id = this->askAnswer();
-
-    sendStrMessage("get-address;"+id+";");
-
-    Heap::getInstance()->addVSptr(id, askAnswer() , type, data,"0" );
     return id;
 }
 
-Heap* Client::getHeap()
-{
-    return this->heap;
-}
 
 void Client::delRef(string id){
     this->sendStrMessage("delete-ref;"+id+";");
-    heap->deleteRef(id);
 }
 
 void Client::addRef(string id){
     this->sendStrMessage("new-ref;"+id+";");
-    heap->addRef(id);
 }
 
-void Client::update(string id, string value){
+string Client::update(string id, string value){
     this->sendStrMessage("update;"+id+";"+value+";");
-    heap->update(id, value);
+    sendStrMessage("get-address;"+id+";");
+    return askAnswer();
 }
 
 void Client::getType(string id, string value){

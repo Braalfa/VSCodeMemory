@@ -9,12 +9,12 @@ Heap *Heap::getInstance() {
     return instance;
 }
 
-void Heap::addVSptr(string id, string address, string type, string data,string references){
+void Heap::addVSptr(string id, string type, string data){
     idList.addLast(id);
-    addreesList.addLast(address);
+    addreesList.addLast("null");
     typeList.addLast(type);
     dataList.addLast(data);
-    referencesList.addLast(references);
+    referencesList.addLast("0");
 }
 
 void Heap::deleteVSptr(string id){
@@ -44,9 +44,10 @@ void Heap::deleteRef(string id){
     referencesList.getNodoPos(i).setValue(newString);
 }
 
-void Heap::update(string id, string value){
+void Heap::update(string id, string value, string address){
     int i = idList.getPos(id);
     dataList.getNodoPos(i).setValue(value);
+    addreesList.getNodoPos(i).setValue(address);
 }
 
 string Heap::updatePanelList() {

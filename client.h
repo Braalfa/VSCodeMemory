@@ -9,7 +9,6 @@ class Client
 {
 public:
     Client();
-    Client(Heap *heap);
     void sendStrMessage(string messageSt);
     string askAnswer();
     void getType(string id, string value);
@@ -17,13 +16,10 @@ public:
     void setServer(string ip, string port, string user, string password);
     void addRef(string id);
     void delRef(string id);
-    void update(string id, string value);
+    string update(string id, string value);
     int logIn();
-    string newVSptr(string data, string type);
-    Heap* getHeap();
-
+    string newVSptr(string type);
 private:
-    Heap *heap;
     string password;
     string user;
     string ip;

@@ -21,11 +21,11 @@ public:
     TList typeList;
     TList dataList;
     TList referencesList;
-    void addVSptr(string id, string address, string type, string data,string references);
+    void addVSptr(string id, string type, string data);
     void deleteVSptr(string id);
     void addRef(string id);
     void deleteRef(string id);
-    void update(string id, string value);
+    void update(string id, string value, string address);
     string updatePanelList();
 };
 

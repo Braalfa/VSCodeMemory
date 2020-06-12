@@ -10,14 +10,16 @@ template<class T>
 VSPtr<T> VSPtr<T>::New()
 {
     VSPtr<T> newVSPtr= *new VSPtr;
-    newVSPtr.references = 1;
+    newVSPtr.references = 0;
     GarbageCollector::setType(Local);
     if(GarbageCollector::type==Local){
         newVSPtr.ptr = nullptr;
     }
     string name = typeid(*newVSPtr.ptr).name();
+
     GarbageCollector g=* GarbageCollector::getInstance();
-    newVSPtr.ID = g.addNode(newVSPtr.ptr, "",name);
+
+    newVSPtr.ID = g.addNode(newVSPtr.ptr, name);
     return newVSPtr;
 }
 
@@ -76,10 +78,8 @@ T VSPtr<T>::operator&() {
 template<class T>
 void VSPtr<T>::operator=(T newValue) {
 
-    void *vp = static_cast<void*>(ptr);
-    value = *static_cast<std::string*>(vp);
-    ptr= &newValue;
-    GarbageCollector::getInstance()->setMemory(ptr, ID, value);
+    GarbageCollector::getInstance()->setMemory(&newValue, ID, type);
+
 }
 
 template<class T>
