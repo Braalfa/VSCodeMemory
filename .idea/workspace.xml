@@ -1,5 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
   <component name="CMakeRunConfigurationManager" shouldGenerate="true" shouldDeleteObsolete="true">
     <generated />
   </component>
@@ -9,7 +27,9 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="eea80f73-faf6-4a43-9159-9d36711c2ca1" name="Default Changelist" comment="" />
+    <list default="true" id="eea80f73-faf6-4a43-9159-9d36711c2ca1" name="Default Changelist" comment="DocuInterna">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -50,17 +70,42 @@
       <option name="presentableId" value="Default" />
       <updated>1591988635996</updated>
       <workItem from="1591988642235" duration="599000" />
-      <workItem from="1592006844119" duration="7366000" />
+      <workItem from="1592006844119" duration="7438000" />
+      <workItem from="1592015755282" duration="15000" />
     </task>
+    <task id="LOCAL-00001" summary="DocuInterna">
+      <created>1592015715226</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1592015715227</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="2" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="DocuInterna" />
+    <option name="LAST_COMMIT_MESSAGE" value="DocuInterna" />
+  </component>
   <component name="WindowStateProjectService">
-    <state x="532" y="100" width="912" height="904" key="CommitChangelistDialog2" timestamp="1592015308307">
+    <state x="532" y="100" width="912" height="904" key="CommitChangelistDialog2" timestamp="1592015695946">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state x="532" y="100" width="912" height="904" key="CommitChangelistDialog2/67.27.1853.1053/1920.0.1920.1080@67.27.1853.1053" timestamp="1592015308307" />
+    <state x="532" y="100" width="912" height="904" key="CommitChangelistDialog2/67.27.1853.1053/1920.0.1920.1080@67.27.1853.1053" timestamp="1592015695946" />
   </component>
 </project>
