@@ -4,7 +4,9 @@
 
 #ifndef VSCODEMEMORYLIB_TNODE_H
 #define VSCODEMEMORYLIB_TNODE_H
-
+/**
+ * Clase secundaria TList que se utilisa para el manejo de informacion
+ */
 #include <string>
 using namespace std;
 

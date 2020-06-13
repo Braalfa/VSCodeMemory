@@ -7,7 +7,9 @@
 
 #include "Node.h"
 
-
+/**
+ * Lista que es utilizada por el GC para el manejo de los parametros del VSPtr
+ */
 class List {
     Node *first;
 public:

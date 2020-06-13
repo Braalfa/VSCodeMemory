@@ -10,15 +10,17 @@
 #include "List.h"
 #include "client.h"
 
-/*
- * Aqui arriba va la clase sujeto del GarbageCollector, pero me puse a programar esa lista de mierda.
- *
- */
+
 
 using namespace std;
 #include <string>
 
-
+/**
+ *  * GarbageCollector es una clase la cual controla la cantidad de refenencias cuando se crea una varibale cuano se cambia
+ * el valor de una varibale , cuando se elimina las variables.
+ * Eete Grabage collector puede variar por un metodo facade que se utiliza para la creacion de garbageCollecotrs locales o
+ * remotos segun la preferencia del usuario
+ */
 
 enum GarbageType {
     Local,    Remote

@@ -7,11 +7,18 @@
 
 using namespace std;
 
-
+/**
+ *
+ * @return el primer dato del Nodo
+ */
 Node *List::getFirst()  {
     return first;
 }
-
+/**
+ *
+ * @param dirMemory direccion de mememoria donde se encuentra el VSPtr
+ * @return
+ */
 int List::addNode(void *dirMemory) {
     if(this->first == nullptr){
         this->first = new Node(dirMemory);
@@ -27,7 +34,9 @@ int List::addNode(void *dirMemory) {
 
     }
 }
-
+/**
+ * Imprime la lista en pantalla solo se utiliza de forma ilustratiba
+ */
 void List::printList() {
     Node *present = this->first;
     cout<<"{";
@@ -42,11 +51,16 @@ void List::printList() {
     }
     cout<<"}";
 }
-
+/**
+ *Se sintancia la Lista
+ */
 List::List() {
     first= nullptr;
 }
-
+/**
+ *Elimina un Nodo segun su ID
+ * @param ID id del nodo que deseo eliminar
+ */
 void List::deleteNode(int ID) {
     Node *temp1 = this->first;
     Node *temp2 = this->first->next;
@@ -64,7 +78,11 @@ void List::deleteNode(int ID) {
     }
 }
 
-
+/**
+ *Otiene un nodo con su ID
+ * @param ID el ID del VSPtr del nodo que quiero recibir
+ * @return
+ */
 Node List::getNode(int ID) {
     Node *present = this->first;
     while (present != nullptr){
@@ -77,17 +95,27 @@ Node List::getNode(int ID) {
     }
     return present;
 }
-
+/**
+ *Se eliminar una referencia del VSPtr
+ * @param ID el Id especifico del nodo que queiro eliminar la refenrcia
+ */
 void List::deleteReferences(int ID) {
     Node present = getNode(ID);
     present.addReferences();
 }
-
+/**
+ *Se añade una referencias A UN VSPtr especifico
+ * @param ID el paramento ID del VSPtr al cua quiero agregra una referencia
+ */
 void List::addReferences(int ID) {
     Node present = getNode(ID);
     present.deleteReferences();
 }
-
+/**
+ *Se cambia el valo de la direcciond de Memoria en la Lista
+ * @param dirMemory la nueva direccion de memoria
+ * @param ID el ID qdel VSPtr que quiero cambiar
+ */
 void List::setMemory(void *dirMemory, int ID) {
     Node present = getNode(ID);
     present.setDirMemory(dirMemory);

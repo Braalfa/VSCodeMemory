@@ -13,7 +13,9 @@
 #include "TNode.h"
 #include <string>
 using namespace std;
-
+/**
+ * Lista que es instancida en la clase heap para el manejo de paramentros
+ */
 class TList
 {
 private:

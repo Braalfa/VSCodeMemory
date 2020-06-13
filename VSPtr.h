@@ -10,7 +10,12 @@
 
 
 using namespace std;
-
+/**
+ * /**
+ * La clase VSPtr se encarga de la creacion de puteros,esta maneja un valor T* de direccion de mememoria,le genera un ID
+ * la cantidad de referencias  y el tipo de dato que este ocupa.
+ * @tparam T tipo template para la creacion de parametros
+ */
 template <class T>
 class VSPtr
 {

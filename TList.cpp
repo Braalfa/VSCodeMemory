@@ -3,18 +3,27 @@
 //
 
 #include "TList.h"
-
+/**
+ * Se intancia el TList
+ */
 TList::TList()
 {
     first = nullptr;
     largo=0;
 }
-
+/**
+ * Se obtiene el primer vnodo de la TList
+ * @return
+ */
 TNode TList::getFirst()
 {
     return *this->first;
 }
-
+/**
+ *
+ * @param  string en su matoria el string de id
+ * @return el nodo segun un valor
+ */
 TNode TList::getNodoVal(string val) {
     TNode *present = this->first;
     while (present != nullptr) {
@@ -26,7 +35,10 @@ TNode TList::getNodoVal(string val) {
     }
     exit(1);
 }
-
+/**
+ * @param pos la posicion del nodo que quiero recivir
+ * @return Obtiene el nodo segun su posicion
+ */
 TNode TList::getNodoPos(int pos) {
     TNode *present = this->first;
     int i=0;
@@ -36,7 +48,11 @@ TNode TList::getNodoPos(int pos) {
     }
     return *present;
 }
-
+/**
+ * Obtiene la posicion donde se encuentra el valor
+ * @param value el valor del cual deseo su posicion
+ * @return un entero
+ */
 int TList::getPos(string value) {
     TNode *present = this->first;
     int i = 0;
@@ -50,7 +66,10 @@ int TList::getPos(string value) {
     }
     exit(1);
 }
-
+/**
+ * Agrega unn valor al final de la lista
+ * @param data el valor que deseo agregar
+ */
 void TList::addLast(string data)
 {
     if(this->first == nullptr){
@@ -66,7 +85,10 @@ void TList::addLast(string data)
         largo =+1;
     }
 }
-
+/**
+ * Elimina un nodo segun su posicion
+ * @param pos la posicion del nodo que deseo eliminar
+ */
 void TList::deletePos(int pos) {
     TNode *temp1 = this->first;
     TNode *temp2 = this->first->next;
@@ -87,7 +109,9 @@ void TList::deletePos(int pos) {
         largo =-1;
     }
 }
-
+/**
+ * imprime la lista solo se usa con fines ilustrativos
+ */
 void TList::printList()
 {
     TNode *present = this->first;
