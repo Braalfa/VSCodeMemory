@@ -11,6 +11,7 @@ GarbageCollector* GarbageCollector::instance = 0;
 
 GarbageCollector::GarbageCollector(){
     listGarbageCollector= new List;
+    client=new Client;
 }
 
 
@@ -35,13 +36,12 @@ void GarbageCollector::setType(GarbageType newtype){
     type=newtype;
 }
 
-
-void GarbageCollector::setClient(Client client){
-
-};
 void GarbageCollector::deleteReferences(int ID){
     if(type == Remote){
-        client->delRef(to_string(ID));
+        bool empty=client->delRef(to_string(ID));
+        if(empty){
+            Heap::getInstance()->deleteVSptr(to_string(ID));
+        }
     }else if(type == Local) {
         getList()->deleteReferences(ID);
         if (getList()->getNode(ID)->getReferences()==0) {
@@ -51,6 +51,7 @@ void GarbageCollector::deleteReferences(int ID){
     Heap::getInstance()->deleteRef(to_string(ID));
 
 };
+
 void GarbageCollector::addReferences(int ID){
     if(type == Remote){
         client->addRef(to_string(ID));
@@ -85,11 +86,12 @@ void GarbageCollector::setMemory(void *dirMemory, int ID, string theType){
     }else if(theType=="f"){
         value = to_string(*static_cast<float*>(dirMemory));
     }else{
+        theType="string";
         value = *static_cast<std::string*>(dirMemory);
     }
 
     if(type ==Remote){
-       address=client->update(to_string(ID), value);
+       address=client->update(to_string(ID), value, theType);
     }else if(type==Local){
        getList()->getNode(ID)->setDirMemory(dirMemory);
 
@@ -106,4 +108,8 @@ void GarbageCollector::deleteVS(int ID){
     delete(getList()->getNode(ID)->getDirMemory());
     getList()->deleteNode(ID);
     Heap::getInstance()->deleteVSptr(to_string(ID));
+}
+
+Client* GarbageCollector::getClient() {
+    return this->client;
 };

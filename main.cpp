@@ -5,30 +5,21 @@
 #include "List.h"
 #include "heap.h"
 int main(){
+    GarbageCollector::setType(Remote);
+    Client* c=GarbageCollector::getInstance()->getClient();
+    c->setServer("127.0.0.1", "8888", "juanybrayan","myproyectpassword");
+    c->logIn();
+
     VSPtr<int> v=VSPtr<int>::New();
     v=7;
-    VSPtr<int> j=VSPtr<int>::New();
-    j=8;
-    VSPtr<int> m=VSPtr<int>::New();
-    m=9;
 
-    v=j;
-    m=v;
+    VSPtr<int> w=VSPtr<int>::New();
+    w=8;
 
-    v=10;
+    VSPtr<int> k=VSPtr<int>::New();
+    k=9;
 
-    int o= &v;
-    int u= *v;
+    w=v;
+    k=v;
 
-    Heap h=*Heap::getInstance();
-
-    List l=*GarbageCollector::getInstance()->getList();
-
-    cout<<"Heap"<<endl;
-    h.idList.printList();
-    h.addreesList.printList();
-    h.dataList.printList();
-    h.referencesList.printList();
-    h.typeList.printList();
-   cout<<h.idList.largo<<endl;
 }

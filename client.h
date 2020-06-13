@@ -15,8 +15,8 @@ public:
     void saveCredentials(string credentials);
     void setServer(string ip, string port, string user, string password);
     void addRef(string id);
-    void delRef(string id);
-    string update(string id, string value);
+    bool delRef(string id);
+    string update(string id, string value, string type);
     int logIn();
     string newVSptr(string type);
 private:

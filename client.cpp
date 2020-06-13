@@ -16,41 +16,46 @@ using namespace std;
 
 Client::Client(){
     sock=0;
-    GarbageCollector::getInstance()->setClient(*this);
 }
 
 
 
 string Client::newVSptr(string type){
     Json::Value root;
-    Json::StreamWriterBuilder wbuilder;
-    wbuilder["data"] = "0";
-    wbuilder["type"] = type;
+    root["data"] = "";
+    root["type"] = type;
 
-    string json = Json::writeString(wbuilder, root);
+    Json::FastWriter fastwriter;
+    std::string json = fastwriter.write(root);
+
     this->sendStrMessage("new-vs;"+json+";");
     string id = this->askAnswer();
     return id;
 }
 
 
-void Client::delRef(string id){
+bool Client::delRef(string id){
     this->sendStrMessage("delete-ref;"+id+";");
+    string answer= askAnswer();
+    return answer == "1";
 }
 
 void Client::addRef(string id){
     this->sendStrMessage("new-ref;"+id+";");
 }
 
-string Client::update(string id, string value){
-    this->sendStrMessage("update;"+id+";"+value+";");
-    sendStrMessage("get-address;"+id+";");
+string Client::update(string id, string value, string type){
+    Json::Value root;
+    root["data"] = value;
+    root["type"] = type;
+
+    Json::FastWriter fastwriter;
+    std::string json = fastwriter.write(root);
+    this->sendStrMessage("update;"+id+";"+json+";");
+
     return askAnswer();
 }
 
-void Client::getType(string id, string value){
-    this->sendStrMessage("get-type;"+id+";");
-}
 
 Json::Value toJson(string message){
     Json::Value val;
@@ -125,7 +130,7 @@ int Client::logIn()
     }
 
     string password = getmd5(this->password);
-    sendStrMessage("log-in;"+password+";"+user+";");
+    sendStrMessage("log-in;"+user+";"+password+";");
     string answer = this->askAnswer();
 
     if(answer=="connection failed"){

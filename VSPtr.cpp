@@ -10,7 +10,6 @@ template<class T>
 VSPtr<T> VSPtr<T>::New()
 {
     VSPtr<T> newVSPtr= *new VSPtr;
-    GarbageCollector::setType(Local);
     if(GarbageCollector::type==Local){
         newVSPtr.ptr = nullptr;
     }
