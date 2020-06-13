@@ -7,9 +7,7 @@
 
 #include "Node.h"
 
-/**
- * Lista que es utilizada por el GC para el manejo de los parametros del VSPtr
- */
+
 class List {
     Node *first;
 public:
@@ -18,7 +16,7 @@ public:
     int addNode(void *dirMemory);
     void setMemory(void *dirMemory, int ID);
     void deleteNode(int ID);
-    Node getNode(int ID);
+    Node* getNode(int ID);
 
     void deleteReferences(int ID);
     void addReferences(int ID);

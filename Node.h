@@ -5,10 +5,7 @@
 #ifndef VSCODEMEMORY_NODE_H
 #define VSCODEMEMORY_NODE_H
 
-/**
- * La clase nodo donde guradaremos los datos del vsptr y donde hremos modificaciones en la lsita del
- * GarbageCollecotr
- */
+
 class Node {
 private:
     void* dirMemory ;

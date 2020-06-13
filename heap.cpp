@@ -13,8 +13,8 @@ void Heap::addVSptr(string id, string type, string data){
     idList.addLast(id);
     addreesList.addLast("null");
     typeList.addLast(type);
-    dataList.addLast(data);
-    referencesList.addLast("0");
+    dataList.addLast("");
+    referencesList.addLast("1");
 }
 
 void Heap::deleteVSptr(string id){
@@ -28,37 +28,40 @@ void Heap::deleteVSptr(string id){
 
 void Heap::addRef(string id){
     int i  = idList.getPos(id);
-    string actual = referencesList.getNodoPos(i).getValue();
+    string actual = referencesList.getNodoPos(i)->getValue();
     int actualInt = stoi(actual);
     actualInt +=1;
     string newString = to_string(actualInt);
-    referencesList.getNodoPos(i).setValue(newString);
+    referencesList.getNodoPos(i)->setValue(newString);
 }
 
 void Heap::deleteRef(string id){
     int i  = idList.getPos(id);
-    string actual = referencesList.getNodoPos(i).getValue();
+    if(i==-1){
+        return;
+    }
+    string actual = referencesList.getNodoPos(i)->getValue();
     int actualInt = stoi(actual);
     actualInt -=1;
     string newString = to_string(actualInt);
-    referencesList.getNodoPos(i).setValue(newString);
+    referencesList.getNodoPos(i)->setValue(newString);
 }
 
 void Heap::update(string id, string value, string address){
     int i = idList.getPos(id);
-    dataList.getNodoPos(i).setValue(value);
-    addreesList.getNodoPos(i).setValue(address);
+    dataList.getNodoPos(i)->setValue(value);
+    addreesList.getNodoPos(i)->setValue(address);
 }
 
 string Heap::updatePanelList() {
     string newPanelList;
     int pos=0;
     while (pos != idList.largo){
-        newPanelList += idList.getNodoPos(pos).getValue();
-        newPanelList += addreesList.getNodoPos(pos).getValue();
-        newPanelList += typeList.getNodoPos(pos).getValue();
-        newPanelList += dataList.getNodoPos(pos).getValue();
-        newPanelList += referencesList.getNodoPos(pos).getValue();
+        newPanelList += idList.getNodoPos(pos)->getValue();
+        newPanelList += addreesList.getNodoPos(pos)->getValue();
+        newPanelList += typeList.getNodoPos(pos)->getValue();
+        newPanelList += dataList.getNodoPos(pos)->getValue();
+        newPanelList += referencesList.getNodoPos(pos)->getValue();
 
         newPanelList += ";";
         pos +=1;

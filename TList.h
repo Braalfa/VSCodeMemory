@@ -13,9 +13,7 @@
 #include "TNode.h"
 #include <string>
 using namespace std;
-/**
- * Lista que es instancida en la clase heap para el manejo de paramentros
- */
+
 class TList
 {
 private:
@@ -23,9 +21,9 @@ private:
 public:
     int largo;
     TList();
-    TNode getFirst();
-    TNode getNodoPos(int pos);
-    TNode getNodoVal(string val);
+    TNode* getFirst();
+    TNode* getNodoPos(int pos);
+    TNode* getNodoVal(string val);
     int getPos(string value);
     void addLast(string data);
     void deletePos(int pos);

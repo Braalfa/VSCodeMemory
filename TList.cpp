@@ -3,56 +3,40 @@
 //
 
 #include "TList.h"
-/**
- * Se intancia el TList
- */
+
 TList::TList()
 {
     first = nullptr;
     largo=0;
 }
-/**
- * Se obtiene el primer vnodo de la TList
- * @return
- */
-TNode TList::getFirst()
+
+TNode* TList::getFirst()
 {
-    return *this->first;
+    return this->first;
 }
-/**
- *
- * @param  string en su matoria el string de id
- * @return el nodo segun un valor
- */
-TNode TList::getNodoVal(string val) {
+
+TNode* TList::getNodoVal(string val) {
     TNode *present = this->first;
     while (present != nullptr) {
         if(present->getValue() == val)
-            return *present;
+            return present;
         else{
             present = present->next;
         }
     }
     exit(1);
 }
-/**
- * @param pos la posicion del nodo que quiero recivir
- * @return Obtiene el nodo segun su posicion
- */
-TNode TList::getNodoPos(int pos) {
+
+TNode* TList::getNodoPos(int pos) {
     TNode *present = this->first;
     int i=0;
     while (i != pos){
         present = present->next;
         i+=1;
     }
-    return *present;
+    return present;
 }
-/**
- * Obtiene la posicion donde se encuentra el valor
- * @param value el valor del cual deseo su posicion
- * @return un entero
- */
+
 int TList::getPos(string value) {
     TNode *present = this->first;
     int i = 0;
@@ -64,17 +48,14 @@ int TList::getPos(string value) {
             i+=1;
         }
     }
-    exit(1);
+    return -1;
 }
-/**
- * Agrega unn valor al final de la lista
- * @param data el valor que deseo agregar
- */
+
 void TList::addLast(string data)
 {
     if(this->first == nullptr){
         this->first = new TNode(data);
-        largo =+1;
+        largo +=1;
     }
     else{
         TNode *present =  this->first;
@@ -82,36 +63,36 @@ void TList::addLast(string data)
             present = present->next;
         }
         present->next = new TNode(data);
-        largo =+1;
+        largo +=1;
     }
 }
-/**
- * Elimina un nodo segun su posicion
- * @param pos la posicion del nodo que deseo eliminar
- */
+
 void TList::deletePos(int pos) {
     TNode *temp1 = this->first;
     TNode *temp2 = this->first->next;
     if(pos == 0){
         this->first = temp1->next;
-        largo =-1;
+        largo -=1;
     }
     else{
         int  i = 0;
-        while (i != pos){
+        while (i != pos-1){
             temp1 = temp1->next;
             temp2 = temp2->next;
             i=+1;
         }
         TNode *aux = temp2;
-        temp1->next = temp2->next;
+        if(pos<largo-1) {
+            temp1->next = temp2->next;
+        }else{
+            temp1->next= nullptr;
+        }
+
         delete aux;
-        largo =-1;
+        largo -=1;
     }
 }
-/**
- * imprime la lista solo se usa con fines ilustrativos
- */
+
 void TList::printList()
 {
     TNode *present = this->first;

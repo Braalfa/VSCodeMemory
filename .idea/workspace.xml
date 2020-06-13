@@ -19,7 +19,9 @@
     <select />
   </component>
   <component name="CMakeRunConfigurationManager" shouldGenerate="true" shouldDeleteObsolete="true">
-    <generated />
+    <generated>
+      <config projectName="VSCodeMemory" targetName="VSCodeMemory" />
+    </generated>
   </component>
   <component name="CMakeSettings">
     <configurations>
@@ -28,7 +30,24 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="eea80f73-faf6-4a43-9159-9d36711c2ca1" name="Default Changelist" comment="DocuInterna">
+      <change afterPath="$PROJECT_DIR$/main.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/VSCodeMemory.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/VSCodeMemory.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GarbageCollector.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/GarbageCollector.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GarbageCollector.h" beforeDir="false" afterPath="$PROJECT_DIR$/GarbageCollector.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/List.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/List.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/List.h" beforeDir="false" afterPath="$PROJECT_DIR$/List.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Node.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Node.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Node.h" beforeDir="false" afterPath="$PROJECT_DIR$/Node.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TList.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/TList.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TList.h" beforeDir="false" afterPath="$PROJECT_DIR$/TList.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TNode.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/TNode.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TNode.h" beforeDir="false" afterPath="$PROJECT_DIR$/TNode.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/VSCodeMemory.pro.user" beforeDir="false" afterPath="$PROJECT_DIR$/VSCodeMemory.pro.user" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/VSPtr.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/VSPtr.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/VSPtr.h" beforeDir="false" afterPath="$PROJECT_DIR$/VSPtr.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/heap.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/heap.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,6 +57,7 @@
   <component name="ClangdSettings">
     <option name="formatViaClangd" value="false" />
   </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="CMakeBuildProfile:Debug" />
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
@@ -59,6 +79,13 @@
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
   </component>
+  <component name="RunManager">
+    <configuration name="VSCodeMemory" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="VSCodeMemory" TARGET_NAME="VSCodeMemory" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="VSCodeMemory" RUN_TARGET_NAME="VSCodeMemory">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+  </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -72,6 +99,8 @@
       <workItem from="1591988642235" duration="599000" />
       <workItem from="1592006844119" duration="7438000" />
       <workItem from="1592015755282" duration="15000" />
+      <workItem from="1592062408455" duration="114000" />
+      <workItem from="1592062523728" duration="9286000" />
     </task>
     <task id="LOCAL-00001" summary="DocuInterna">
       <created>1592015715226</created>
@@ -103,9 +132,76 @@
     <option name="LAST_COMMIT_MESSAGE" value="DocuInterna" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="177" y="55" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1592062451324">
+      <screen x="72" y="27" width="1294" height="741" />
+    </state>
+    <state x="177" y="55" key="#com.intellij.execution.impl.EditConfigurationsDialog/72.27.1294.741@72.27.1294.741" timestamp="1592062451324" />
     <state x="532" y="100" width="912" height="904" key="CommitChangelistDialog2" timestamp="1592015695946">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
     <state x="532" y="100" width="912" height="904" key="CommitChangelistDialog2/67.27.1853.1053/1920.0.1920.1080@67.27.1853.1053" timestamp="1592015695946" />
+    <state x="502" y="155" width="424" height="491" key="FileChooserDialogImpl" timestamp="1592062504614">
+      <screen x="72" y="27" width="1294" height="741" />
+    </state>
+    <state x="502" y="155" width="424" height="491" key="FileChooserDialogImpl/72.27.1294.741@72.27.1294.741" timestamp="1592062504614" />
+    <state width="1248" height="215" key="GridCell.Tab.0.bottom" timestamp="1592071536078">
+      <screen x="72" y="27" width="1294" height="741" />
+    </state>
+    <state width="1248" height="215" key="GridCell.Tab.0.bottom/72.27.1294.741@72.27.1294.741" timestamp="1592071536078" />
+    <state width="1248" height="215" key="GridCell.Tab.0.center" timestamp="1592071536078">
+      <screen x="72" y="27" width="1294" height="741" />
+    </state>
+    <state width="1248" height="215" key="GridCell.Tab.0.center/72.27.1294.741@72.27.1294.741" timestamp="1592071536078" />
+    <state width="1248" height="215" key="GridCell.Tab.0.left" timestamp="1592071536078">
+      <screen x="72" y="27" width="1294" height="741" />
+    </state>
+    <state width="1248" height="215" key="GridCell.Tab.0.left/72.27.1294.741@72.27.1294.741" timestamp="1592071536078" />
+    <state width="1248" height="215" key="GridCell.Tab.0.right" timestamp="1592071536078">
+      <screen x="72" y="27" width="1294" height="741" />
+    </state>
+    <state width="1248" height="215" key="GridCell.Tab.0.right/72.27.1294.741@72.27.1294.741" timestamp="1592071536078" />
+    <state width="1248" height="215" key="GridCell.Tab.1.bottom" timestamp="1592071536389">
+      <screen x="72" y="27" width="1294" height="741" />
+    </state>
+    <state width="1248" height="215" key="GridCell.Tab.1.bottom/72.27.1294.741@72.27.1294.741" timestamp="1592071536389" />
+    <state width="1248" height="215" key="GridCell.Tab.1.center" timestamp="1592071536388">
+      <screen x="72" y="27" width="1294" height="741" />
+    </state>
+    <state width="1248" height="215" key="GridCell.Tab.1.center/72.27.1294.741@72.27.1294.741" timestamp="1592071536388" />
+    <state width="1248" height="215" key="GridCell.Tab.1.left" timestamp="1592071536388">
+      <screen x="72" y="27" width="1294" height="741" />
+    </state>
+    <state width="1248" height="215" key="GridCell.Tab.1.left/72.27.1294.741@72.27.1294.741" timestamp="1592071536388" />
+    <state width="1248" height="215" key="GridCell.Tab.1.right" timestamp="1592071536389">
+      <screen x="72" y="27" width="1294" height="741" />
+    </state>
+    <state width="1248" height="215" key="GridCell.Tab.1.right/72.27.1294.741@72.27.1294.741" timestamp="1592071536389" />
+    <state width="640" height="193" key="ImportCMakeProjectWizard.bottomPanel" timestamp="1592062520068">
+      <screen x="72" y="27" width="1294" height="741" />
+    </state>
+    <state width="640" height="193" key="ImportCMakeProjectWizard.bottomPanel/72.27.1294.741@72.27.1294.741" timestamp="1592062520068" />
+    <state width="640" height="450" key="ImportCMakeProjectWizard.topPanel" timestamp="1592062520067">
+      <screen x="72" y="27" width="1294" height="741" />
+    </state>
+    <state width="640" height="450" key="ImportCMakeProjectWizard.topPanel/72.27.1294.741@72.27.1294.741" timestamp="1592062520067" />
+    <state x="383" y="174" key="run.anything.popup" timestamp="1592067005766">
+      <screen x="72" y="27" width="1294" height="741" />
+    </state>
+    <state x="383" y="174" key="run.anything.popup/72.27.1294.741@72.27.1294.741" timestamp="1592067005766" />
+    <state x="382" y="89" width="672" height="678" key="search.everywhere.popup" timestamp="1592065924177">
+      <screen x="72" y="27" width="1294" height="741" />
+    </state>
+    <state x="382" y="89" width="672" height="678" key="search.everywhere.popup/72.27.1294.741@72.27.1294.741" timestamp="1592065924177" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/GarbageCollector.cpp</url>
+          <line>107</line>
+          <option name="timeStamp" value="24" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
