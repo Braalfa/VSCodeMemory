@@ -102,6 +102,12 @@
 		<Unit filename="/home/brayan/Documents/Projects/VSCodeMemory/VSCodeMemory/Node.h">
 			<Option target="VSCodeMemory"/>
 		</Unit>
+		<Unit filename="/home/brayan/Documents/Projects/VSCodeMemory/VSCodeMemory/Reader.cpp">
+			<Option target="VSCodeMemory"/>
+		</Unit>
+		<Unit filename="/home/brayan/Documents/Projects/VSCodeMemory/VSCodeMemory/Reader.h">
+			<Option target="VSCodeMemory"/>
+		</Unit>
 		<Unit filename="/home/brayan/Documents/Projects/VSCodeMemory/VSCodeMemory/TList.cpp">
 			<Option target="VSCodeMemory"/>
 		</Unit>

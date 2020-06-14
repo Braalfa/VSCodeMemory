@@ -5,6 +5,7 @@ CMakeFiles/VSCodeMemory.dir/GarbageCollector.cpp.o: ../GarbageCollector.cpp
 CMakeFiles/VSCodeMemory.dir/GarbageCollector.cpp.o: ../GarbageCollector.h
 CMakeFiles/VSCodeMemory.dir/GarbageCollector.cpp.o: ../List.h
 CMakeFiles/VSCodeMemory.dir/GarbageCollector.cpp.o: ../Node.h
+CMakeFiles/VSCodeMemory.dir/GarbageCollector.cpp.o: ../Reader.h
 CMakeFiles/VSCodeMemory.dir/GarbageCollector.cpp.o: ../TList.h
 CMakeFiles/VSCodeMemory.dir/GarbageCollector.cpp.o: ../TNode.h
 CMakeFiles/VSCodeMemory.dir/GarbageCollector.cpp.o: ../VSPtr.h
@@ -18,6 +19,14 @@ CMakeFiles/VSCodeMemory.dir/List.cpp.o: ../Node.h
 
 CMakeFiles/VSCodeMemory.dir/Node.cpp.o: ../Node.cpp
 CMakeFiles/VSCodeMemory.dir/Node.cpp.o: ../Node.h
+
+CMakeFiles/VSCodeMemory.dir/Reader.cpp.o: ../Reader.cpp
+CMakeFiles/VSCodeMemory.dir/Reader.cpp.o: ../Reader.h
+CMakeFiles/VSCodeMemory.dir/Reader.cpp.o: ../TList.h
+CMakeFiles/VSCodeMemory.dir/Reader.cpp.o: ../TNode.h
+CMakeFiles/VSCodeMemory.dir/Reader.cpp.o: ../client.h
+CMakeFiles/VSCodeMemory.dir/Reader.cpp.o: ../heap.h
+CMakeFiles/VSCodeMemory.dir/Reader.cpp.o: ../json.h
 
 CMakeFiles/VSCodeMemory.dir/TList.cpp.o: ../TList.cpp
 CMakeFiles/VSCodeMemory.dir/TList.cpp.o: ../TList.h
@@ -53,10 +62,13 @@ CMakeFiles/VSCodeMemory.dir/client.cpp.o: ../hl_md5wrapper.h
 CMakeFiles/VSCodeMemory.dir/client.cpp.o: ../hl_types.h
 CMakeFiles/VSCodeMemory.dir/client.cpp.o: ../json.h
 
+CMakeFiles/VSCodeMemory.dir/heap.cpp.o: ../Reader.h
 CMakeFiles/VSCodeMemory.dir/heap.cpp.o: ../TList.h
 CMakeFiles/VSCodeMemory.dir/heap.cpp.o: ../TNode.h
+CMakeFiles/VSCodeMemory.dir/heap.cpp.o: ../client.h
 CMakeFiles/VSCodeMemory.dir/heap.cpp.o: ../heap.cpp
 CMakeFiles/VSCodeMemory.dir/heap.cpp.o: ../heap.h
+CMakeFiles/VSCodeMemory.dir/heap.cpp.o: ../json.h
 
 CMakeFiles/VSCodeMemory.dir/hl_md5.cpp.o: ../hl_md5.cpp
 CMakeFiles/VSCodeMemory.dir/hl_md5.cpp.o: ../hl_md5.h

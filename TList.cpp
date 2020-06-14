@@ -93,14 +93,13 @@ void TList::deletePos(int pos) {
     }
 }
 
-void TList::printList()
+string TList::printList()
 {
     TNode *present = this->first;
-    cout<<"{";
+    string values;
     while (present != nullptr) {
-        cout<<present->getValue();
-        cout<<",";
+        values+=present->getValue()+";";
         present = present->next;
     }
-    cout<<"}"<<endl;
+    return values;
 }

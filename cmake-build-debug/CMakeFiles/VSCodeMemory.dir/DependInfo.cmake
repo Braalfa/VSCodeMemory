@@ -7,6 +7,7 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "/home/brayan/Documents/Projects/VSCodeMemory/VSCodeMemory/GarbageCollector.cpp" "/home/brayan/Documents/Projects/VSCodeMemory/VSCodeMemory/cmake-build-debug/CMakeFiles/VSCodeMemory.dir/GarbageCollector.cpp.o"
   "/home/brayan/Documents/Projects/VSCodeMemory/VSCodeMemory/List.cpp" "/home/brayan/Documents/Projects/VSCodeMemory/VSCodeMemory/cmake-build-debug/CMakeFiles/VSCodeMemory.dir/List.cpp.o"
   "/home/brayan/Documents/Projects/VSCodeMemory/VSCodeMemory/Node.cpp" "/home/brayan/Documents/Projects/VSCodeMemory/VSCodeMemory/cmake-build-debug/CMakeFiles/VSCodeMemory.dir/Node.cpp.o"
+  "/home/brayan/Documents/Projects/VSCodeMemory/VSCodeMemory/Reader.cpp" "/home/brayan/Documents/Projects/VSCodeMemory/VSCodeMemory/cmake-build-debug/CMakeFiles/VSCodeMemory.dir/Reader.cpp.o"
   "/home/brayan/Documents/Projects/VSCodeMemory/VSCodeMemory/TList.cpp" "/home/brayan/Documents/Projects/VSCodeMemory/VSCodeMemory/cmake-build-debug/CMakeFiles/VSCodeMemory.dir/TList.cpp.o"
   "/home/brayan/Documents/Projects/VSCodeMemory/VSCodeMemory/TNode.cpp" "/home/brayan/Documents/Projects/VSCodeMemory/VSCodeMemory/cmake-build-debug/CMakeFiles/VSCodeMemory.dir/TNode.cpp.o"
   "/home/brayan/Documents/Projects/VSCodeMemory/VSCodeMemory/VSPtr.cpp" "/home/brayan/Documents/Projects/VSCodeMemory/VSCodeMemory/cmake-build-debug/CMakeFiles/VSCodeMemory.dir/VSPtr.cpp.o"

@@ -148,9 +148,22 @@ CMakeFiles/VSCodeMemory.dir/List.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/VSCodeMemory.dir/List.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/brayan/Documents/Projects/VSCodeMemory/VSCodeMemory/List.cpp -o CMakeFiles/VSCodeMemory.dir/List.cpp.s
 
+CMakeFiles/VSCodeMemory.dir/main.cpp.o: CMakeFiles/VSCodeMemory.dir/flags.make
+CMakeFiles/VSCodeMemory.dir/main.cpp.o: ../main.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/brayan/Documents/Projects/VSCodeMemory/VSCodeMemory/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/VSCodeMemory.dir/main.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/VSCodeMemory.dir/main.cpp.o -c /home/brayan/Documents/Projects/VSCodeMemory/VSCodeMemory/main.cpp
+
+CMakeFiles/VSCodeMemory.dir/main.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/VSCodeMemory.dir/main.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/brayan/Documents/Projects/VSCodeMemory/VSCodeMemory/main.cpp > CMakeFiles/VSCodeMemory.dir/main.cpp.i
+
+CMakeFiles/VSCodeMemory.dir/main.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/VSCodeMemory.dir/main.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/brayan/Documents/Projects/VSCodeMemory/VSCodeMemory/main.cpp -o CMakeFiles/VSCodeMemory.dir/main.cpp.s
+
 CMakeFiles/VSCodeMemory.dir/Node.cpp.o: CMakeFiles/VSCodeMemory.dir/flags.make
 CMakeFiles/VSCodeMemory.dir/Node.cpp.o: ../Node.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/brayan/Documents/Projects/VSCodeMemory/VSCodeMemory/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/VSCodeMemory.dir/Node.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/brayan/Documents/Projects/VSCodeMemory/VSCodeMemory/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/VSCodeMemory.dir/Node.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/VSCodeMemory.dir/Node.cpp.o -c /home/brayan/Documents/Projects/VSCodeMemory/VSCodeMemory/Node.cpp
 
 CMakeFiles/VSCodeMemory.dir/Node.cpp.i: cmake_force
@@ -161,9 +174,22 @@ CMakeFiles/VSCodeMemory.dir/Node.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/VSCodeMemory.dir/Node.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/brayan/Documents/Projects/VSCodeMemory/VSCodeMemory/Node.cpp -o CMakeFiles/VSCodeMemory.dir/Node.cpp.s
 
+CMakeFiles/VSCodeMemory.dir/Reader.cpp.o: CMakeFiles/VSCodeMemory.dir/flags.make
+CMakeFiles/VSCodeMemory.dir/Reader.cpp.o: ../Reader.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/brayan/Documents/Projects/VSCodeMemory/VSCodeMemory/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/VSCodeMemory.dir/Reader.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/VSCodeMemory.dir/Reader.cpp.o -c /home/brayan/Documents/Projects/VSCodeMemory/VSCodeMemory/Reader.cpp
+
+CMakeFiles/VSCodeMemory.dir/Reader.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/VSCodeMemory.dir/Reader.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/brayan/Documents/Projects/VSCodeMemory/VSCodeMemory/Reader.cpp > CMakeFiles/VSCodeMemory.dir/Reader.cpp.i
+
+CMakeFiles/VSCodeMemory.dir/Reader.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/VSCodeMemory.dir/Reader.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/brayan/Documents/Projects/VSCodeMemory/VSCodeMemory/Reader.cpp -o CMakeFiles/VSCodeMemory.dir/Reader.cpp.s
+
 CMakeFiles/VSCodeMemory.dir/TList.cpp.o: CMakeFiles/VSCodeMemory.dir/flags.make
 CMakeFiles/VSCodeMemory.dir/TList.cpp.o: ../TList.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/brayan/Documents/Projects/VSCodeMemory/VSCodeMemory/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/VSCodeMemory.dir/TList.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/brayan/Documents/Projects/VSCodeMemory/VSCodeMemory/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/VSCodeMemory.dir/TList.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/VSCodeMemory.dir/TList.cpp.o -c /home/brayan/Documents/Projects/VSCodeMemory/VSCodeMemory/TList.cpp
 
 CMakeFiles/VSCodeMemory.dir/TList.cpp.i: cmake_force
@@ -176,7 +202,7 @@ CMakeFiles/VSCodeMemory.dir/TList.cpp.s: cmake_force
 
 CMakeFiles/VSCodeMemory.dir/TNode.cpp.o: CMakeFiles/VSCodeMemory.dir/flags.make
 CMakeFiles/VSCodeMemory.dir/TNode.cpp.o: ../TNode.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/brayan/Documents/Projects/VSCodeMemory/VSCodeMemory/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/VSCodeMemory.dir/TNode.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/brayan/Documents/Projects/VSCodeMemory/VSCodeMemory/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/VSCodeMemory.dir/TNode.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/VSCodeMemory.dir/TNode.cpp.o -c /home/brayan/Documents/Projects/VSCodeMemory/VSCodeMemory/TNode.cpp
 
 CMakeFiles/VSCodeMemory.dir/TNode.cpp.i: cmake_force
@@ -189,7 +215,7 @@ CMakeFiles/VSCodeMemory.dir/TNode.cpp.s: cmake_force
 
 CMakeFiles/VSCodeMemory.dir/VSPtr.cpp.o: CMakeFiles/VSCodeMemory.dir/flags.make
 CMakeFiles/VSCodeMemory.dir/VSPtr.cpp.o: ../VSPtr.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/brayan/Documents/Projects/VSCodeMemory/VSCodeMemory/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/VSCodeMemory.dir/VSPtr.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/brayan/Documents/Projects/VSCodeMemory/VSCodeMemory/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/VSCodeMemory.dir/VSPtr.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/VSCodeMemory.dir/VSPtr.cpp.o -c /home/brayan/Documents/Projects/VSCodeMemory/VSCodeMemory/VSPtr.cpp
 
 CMakeFiles/VSCodeMemory.dir/VSPtr.cpp.i: cmake_force
@@ -200,19 +226,6 @@ CMakeFiles/VSCodeMemory.dir/VSPtr.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/VSCodeMemory.dir/VSPtr.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/brayan/Documents/Projects/VSCodeMemory/VSCodeMemory/VSPtr.cpp -o CMakeFiles/VSCodeMemory.dir/VSPtr.cpp.s
 
-CMakeFiles/VSCodeMemory.dir/main.cpp.o: CMakeFiles/VSCodeMemory.dir/flags.make
-CMakeFiles/VSCodeMemory.dir/main.cpp.o: ../main.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/brayan/Documents/Projects/VSCodeMemory/VSCodeMemory/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/VSCodeMemory.dir/main.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/VSCodeMemory.dir/main.cpp.o -c /home/brayan/Documents/Projects/VSCodeMemory/VSCodeMemory/main.cpp
-
-CMakeFiles/VSCodeMemory.dir/main.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/VSCodeMemory.dir/main.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/brayan/Documents/Projects/VSCodeMemory/VSCodeMemory/main.cpp > CMakeFiles/VSCodeMemory.dir/main.cpp.i
-
-CMakeFiles/VSCodeMemory.dir/main.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/VSCodeMemory.dir/main.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/brayan/Documents/Projects/VSCodeMemory/VSCodeMemory/main.cpp -o CMakeFiles/VSCodeMemory.dir/main.cpp.s
-
 # Object files for target VSCodeMemory
 VSCodeMemory_OBJECTS = \
 "CMakeFiles/VSCodeMemory.dir/client.cpp.o" \
@@ -222,11 +235,12 @@ VSCodeMemory_OBJECTS = \
 "CMakeFiles/VSCodeMemory.dir/hl_md5wrapper.cpp.o" \
 "CMakeFiles/VSCodeMemory.dir/json.cpp.o" \
 "CMakeFiles/VSCodeMemory.dir/List.cpp.o" \
+"CMakeFiles/VSCodeMemory.dir/main.cpp.o" \
 "CMakeFiles/VSCodeMemory.dir/Node.cpp.o" \
+"CMakeFiles/VSCodeMemory.dir/Reader.cpp.o" \
 "CMakeFiles/VSCodeMemory.dir/TList.cpp.o" \
 "CMakeFiles/VSCodeMemory.dir/TNode.cpp.o" \
-"CMakeFiles/VSCodeMemory.dir/VSPtr.cpp.o" \
-"CMakeFiles/VSCodeMemory.dir/main.cpp.o"
+"CMakeFiles/VSCodeMemory.dir/VSPtr.cpp.o"
 
 # External object files for target VSCodeMemory
 VSCodeMemory_EXTERNAL_OBJECTS =
@@ -238,14 +252,15 @@ VSCodeMemory: CMakeFiles/VSCodeMemory.dir/hl_md5.cpp.o
 VSCodeMemory: CMakeFiles/VSCodeMemory.dir/hl_md5wrapper.cpp.o
 VSCodeMemory: CMakeFiles/VSCodeMemory.dir/json.cpp.o
 VSCodeMemory: CMakeFiles/VSCodeMemory.dir/List.cpp.o
+VSCodeMemory: CMakeFiles/VSCodeMemory.dir/main.cpp.o
 VSCodeMemory: CMakeFiles/VSCodeMemory.dir/Node.cpp.o
+VSCodeMemory: CMakeFiles/VSCodeMemory.dir/Reader.cpp.o
 VSCodeMemory: CMakeFiles/VSCodeMemory.dir/TList.cpp.o
 VSCodeMemory: CMakeFiles/VSCodeMemory.dir/TNode.cpp.o
 VSCodeMemory: CMakeFiles/VSCodeMemory.dir/VSPtr.cpp.o
-VSCodeMemory: CMakeFiles/VSCodeMemory.dir/main.cpp.o
 VSCodeMemory: CMakeFiles/VSCodeMemory.dir/build.make
 VSCodeMemory: CMakeFiles/VSCodeMemory.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/brayan/Documents/Projects/VSCodeMemory/VSCodeMemory/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Linking CXX executable VSCodeMemory"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/brayan/Documents/Projects/VSCodeMemory/VSCodeMemory/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Linking CXX executable VSCodeMemory"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/VSCodeMemory.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

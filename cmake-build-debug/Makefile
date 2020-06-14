@@ -204,6 +204,33 @@ Node.cpp.s:
 	$(MAKE) -f CMakeFiles/VSCodeMemory.dir/build.make CMakeFiles/VSCodeMemory.dir/Node.cpp.s
 .PHONY : Node.cpp.s
 
+Reader.o: Reader.cpp.o
+
+.PHONY : Reader.o
+
+# target to build an object file
+Reader.cpp.o:
+	$(MAKE) -f CMakeFiles/VSCodeMemory.dir/build.make CMakeFiles/VSCodeMemory.dir/Reader.cpp.o
+.PHONY : Reader.cpp.o
+
+Reader.i: Reader.cpp.i
+
+.PHONY : Reader.i
+
+# target to preprocess a source file
+Reader.cpp.i:
+	$(MAKE) -f CMakeFiles/VSCodeMemory.dir/build.make CMakeFiles/VSCodeMemory.dir/Reader.cpp.i
+.PHONY : Reader.cpp.i
+
+Reader.s: Reader.cpp.s
+
+.PHONY : Reader.s
+
+# target to generate assembly for a file
+Reader.cpp.s:
+	$(MAKE) -f CMakeFiles/VSCodeMemory.dir/build.make CMakeFiles/VSCodeMemory.dir/Reader.cpp.s
+.PHONY : Reader.cpp.s
+
 TList.o: TList.cpp.o
 
 .PHONY : TList.o
@@ -465,6 +492,9 @@ help:
 	@echo "... Node.o"
 	@echo "... Node.i"
 	@echo "... Node.s"
+	@echo "... Reader.o"
+	@echo "... Reader.i"
+	@echo "... Reader.s"
 	@echo "... TList.o"
 	@echo "... TList.i"
 	@echo "... TList.s"

@@ -27,7 +27,7 @@ public:
     int getPos(string value);
     void addLast(string data);
     void deletePos(int pos);
-    void printList();
+    string printList();
 };
 
 

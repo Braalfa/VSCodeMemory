@@ -1,10 +1,14 @@
+#include <thread>
 #include "heap.h"
+#include "Reader.h"
 
 Heap* Heap::instance = nullptr;
 
 Heap *Heap::getInstance() {
     if(!instance){
         instance = new Heap();
+        std::thread first(&Heap::updatePanelList, instance);
+        first.detach();
     }
     return instance;
 }
@@ -15,6 +19,7 @@ void Heap::addVSptr(string id, string type, string data){
     typeList.addLast(type);
     dataList.addLast("");
     referencesList.addLast("1");
+    updatePanelList();
 }
 
 void Heap::deleteVSptr(string id){
@@ -24,6 +29,7 @@ void Heap::deleteVSptr(string id){
     typeList.deletePos(i);
     dataList.deletePos(i);
     referencesList.deletePos(i);
+    updatePanelList();
 }
 
 void Heap::addRef(string id){
@@ -33,6 +39,7 @@ void Heap::addRef(string id){
     actualInt +=1;
     string newString = to_string(actualInt);
     referencesList.getNodoPos(i)->setValue(newString);
+    updatePanelList();
 }
 
 void Heap::deleteRef(string id){
@@ -45,28 +52,20 @@ void Heap::deleteRef(string id){
     actualInt -=1;
     string newString = to_string(actualInt);
     referencesList.getNodoPos(i)->setValue(newString);
+    updatePanelList();
 }
 
 void Heap::update(string id, string value, string address){
     int i = idList.getPos(id);
     dataList.getNodoPos(i)->setValue(value);
     addreesList.getNodoPos(i)->setValue(address);
+    updatePanelList();
 }
 
 string Heap::updatePanelList() {
-    string newPanelList;
-    int pos=0;
-    while (pos != idList.largo){
-        newPanelList += idList.getNodoPos(pos)->getValue();
-        newPanelList += addreesList.getNodoPos(pos)->getValue();
-        newPanelList += typeList.getNodoPos(pos)->getValue();
-        newPanelList += dataList.getNodoPos(pos)->getValue();
-        newPanelList += referencesList.getNodoPos(pos)->getValue();
-
-        newPanelList += ";";
-        pos +=1;
-    }
-
+    string newPanelList = idList.printList() + addreesList.printList() +
+            typeList.printList() + dataList.printList() + referencesList.printList();
+    Reader::setData(newPanelList);
     return newPanelList;
 }
 

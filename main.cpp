@@ -5,11 +5,6 @@
 #include "List.h"
 #include "heap.h"
 int main(){
-    GarbageCollector::setType(Remote);
-    Client* c=GarbageCollector::getInstance()->getClient();
-    c->setServer("127.0.0.1", "8888", "juanybrayan","myproyectpassword");
-    c->logIn();
-
     VSPtr<int> v=VSPtr<int>::New();
     v=7;
 

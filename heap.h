@@ -26,6 +26,7 @@ public:
     void addRef(string id);
     void deleteRef(string id);
     void update(string id, string value, string address);
+
     string updatePanelList();
 };
 

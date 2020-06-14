@@ -2,6 +2,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/VSCodeMemory.dir/GarbageCollector.cpp.o"
   "CMakeFiles/VSCodeMemory.dir/List.cpp.o"
   "CMakeFiles/VSCodeMemory.dir/Node.cpp.o"
+  "CMakeFiles/VSCodeMemory.dir/Reader.cpp.o"
   "CMakeFiles/VSCodeMemory.dir/TList.cpp.o"
   "CMakeFiles/VSCodeMemory.dir/TNode.cpp.o"
   "CMakeFiles/VSCodeMemory.dir/VSPtr.cpp.o"

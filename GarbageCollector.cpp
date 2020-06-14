@@ -4,7 +4,7 @@
 
 #include "GarbageCollector.h"
 #include "iostream"
-
+#include "Reader.h"
 
 GarbageType GarbageCollector::type;
 GarbageCollector* GarbageCollector::instance = 0;
@@ -12,6 +12,16 @@ GarbageCollector* GarbageCollector::instance = 0;
 GarbageCollector::GarbageCollector(){
     listGarbageCollector= new List;
     client=new Client;
+    if(Reader::isLocal()){
+       type=Local;
+    }else{
+        Reader::setClientSettings(client);
+        if(client->logIn()==-1){
+            type=Local;
+        }else{
+            type=Remote;
+        }
+    }
 }
 
 
