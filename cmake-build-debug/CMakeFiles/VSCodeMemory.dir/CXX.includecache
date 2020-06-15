@@ -6,11 +6,27 @@
 
 #IncludeRegexTransform: 
 
-/home/brayan/Documents/Projects/VSCodeMemory/VSCodeMemory/Reader.h
-iostream
-/home/brayan/Documents/Projects/VSCodeMemory/VSCodeMemory/iostream
+/home/brayan/Documents/Projects/VSCodeMemory/VSCodeMemory/GarbageCollector.h
+VSPtr.h
+/home/brayan/Documents/Projects/VSCodeMemory/VSCodeMemory/VSPtr.h
+List.h
+/home/brayan/Documents/Projects/VSCodeMemory/VSCodeMemory/List.h
 client.h
 /home/brayan/Documents/Projects/VSCodeMemory/VSCodeMemory/client.h
+thread
+/home/brayan/Documents/Projects/VSCodeMemory/VSCodeMemory/thread
+chrono
+/home/brayan/Documents/Projects/VSCodeMemory/VSCodeMemory/chrono
+string
+-
+
+/home/brayan/Documents/Projects/VSCodeMemory/VSCodeMemory/List.h
+Node.h
+/home/brayan/Documents/Projects/VSCodeMemory/VSCodeMemory/Node.h
+
+/home/brayan/Documents/Projects/VSCodeMemory/VSCodeMemory/Node.h
+string
+/home/brayan/Documents/Projects/VSCodeMemory/VSCodeMemory/string
 
 /home/brayan/Documents/Projects/VSCodeMemory/VSCodeMemory/TList.h
 fstream
@@ -30,6 +46,12 @@ string
 string
 -
 
+/home/brayan/Documents/Projects/VSCodeMemory/VSCodeMemory/VSPtr.h
+GarbageCollector.h
+/home/brayan/Documents/Projects/VSCodeMemory/VSCodeMemory/GarbageCollector.h
+iostream
+/home/brayan/Documents/Projects/VSCodeMemory/VSCodeMemory/iostream
+
 /home/brayan/Documents/Projects/VSCodeMemory/VSCodeMemory/client.h
 string
 -
@@ -37,14 +59,6 @@ json.h
 /home/brayan/Documents/Projects/VSCodeMemory/VSCodeMemory/json.h
 heap.h
 /home/brayan/Documents/Projects/VSCodeMemory/VSCodeMemory/heap.h
-
-/home/brayan/Documents/Projects/VSCodeMemory/VSCodeMemory/heap.cpp
-thread
--
-heap.h
-/home/brayan/Documents/Projects/VSCodeMemory/VSCodeMemory/heap.h
-Reader.h
-/home/brayan/Documents/Projects/VSCodeMemory/VSCodeMemory/Reader.h
 
 /home/brayan/Documents/Projects/VSCodeMemory/VSCodeMemory/heap.h
 string
@@ -125,4 +139,14 @@ sstream
 -
 config.h
 /home/brayan/Documents/Projects/VSCodeMemory/VSCodeMemory/config.h
+
+/home/brayan/Documents/Projects/VSCodeMemory/VSCodeMemory/main.cpp
+VSPtr.h
+/home/brayan/Documents/Projects/VSCodeMemory/VSCodeMemory/VSPtr.h
+List.h
+/home/brayan/Documents/Projects/VSCodeMemory/VSCodeMemory/List.h
+heap.h
+/home/brayan/Documents/Projects/VSCodeMemory/VSCodeMemory/heap.h
+thread
+/home/brayan/Documents/Projects/VSCodeMemory/VSCodeMemory/thread
 

@@ -9,11 +9,8 @@
 #include "VSPtr.h"
 #include "List.h"
 #include "client.h"
-
-/*
- * Aqui arriba va la clase sujeto del GarbageCollector, pero me puse a programar esa lista de mierda.
- *
- */
+#include "thread"
+#include "chrono"
 
 using namespace std;
 #include <string>
@@ -41,13 +38,16 @@ public:
     int addNode( void* ptr, string type);
     void setMemory(void *dirMemory, int ID, string type);
     void deleteVS(int ID);
-    Client* getClient();
+
+    [[noreturn]] void threadRun();
+    Client *getClient();
 
 
     static GarbageType type;
     static void setType(GarbageType newtype);
     static GarbageCollector* Create();
     static GarbageCollector* getInstance();
+
 };
 
 

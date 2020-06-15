@@ -7,17 +7,19 @@
 #include "thread"
 int main(){
 
-    this_thread::sleep_for(chrono::seconds(3));
-    VSPtr<int> v=VSPtr<int>::New();
-    v=7;
+    GarbageCollector::getInstance()->getClient()->setServer("127.0.0.1","8888","pepe","myproyectpassword");
+    GarbageCollector::getInstance()->getClient()->logIn();
+    GarbageCollector::setType(Remote);
+    VSPtr<string> v=VSPtr<string>::New();
+    v="7";
 
-    VSPtr<int> w=VSPtr<int>::New();
-    w=8;
+    VSPtr<string> w=VSPtr<string>::New();
+    w="8";
 
-    VSPtr<int> k=VSPtr<int>::New();
-    k=9;
+    VSPtr<string> k=VSPtr<string>::New();
+    k="9";
 
     w=v;
     k=v;
-
+    int i=0;
 }

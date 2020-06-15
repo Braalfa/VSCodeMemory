@@ -31,15 +31,21 @@
   <component name="ChangeListManager">
     <list default="true" id="eea80f73-faf6-4a43-9159-9d36711c2ca1" name="Default Changelist" comment="DocuInterna">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reader.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Reader.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/client.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GarbageCollector.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/GarbageCollector.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GarbageCollector.h" beforeDir="false" afterPath="$PROJECT_DIR$/GarbageCollector.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/List.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/List.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/List.h" beforeDir="false" afterPath="$PROJECT_DIR$/List.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Node.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Node.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Node.h" beforeDir="false" afterPath="$PROJECT_DIR$/Node.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/VSCodeMemory.dir/CXX.includecache" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/VSCodeMemory.dir/CXX.includecache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/VSCodeMemory.dir/Reader.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/VSCodeMemory.dir/Reader.cpp.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/VSCodeMemory.dir/GarbageCollector.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/VSCodeMemory.dir/GarbageCollector.cpp.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/VSCodeMemory.dir/List.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/VSCodeMemory.dir/List.cpp.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/VSCodeMemory.dir/Node.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/VSCodeMemory.dir/Node.cpp.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/VSCodeMemory.dir/VSPtr.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/VSCodeMemory.dir/VSPtr.cpp.o" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/VSCodeMemory.dir/client.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/VSCodeMemory.dir/client.cpp.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/VSCodeMemory.dir/heap.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/VSCodeMemory.dir/heap.cpp.o" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/VSCodeMemory.dir/main.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/VSCodeMemory.dir/main.cpp.o" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/VSCodeMemory" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/VSCodeMemory" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/heap.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/heap.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/credentials.json" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/credentials.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/main.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -97,7 +103,7 @@
       <workItem from="1592062523728" duration="15997000" />
       <workItem from="1592080772953" duration="9468000" />
       <workItem from="1592166980020" duration="4441000" />
-      <workItem from="1592171462944" duration="4386000" />
+      <workItem from="1592171462944" duration="12772000" />
     </task>
     <task id="LOCAL-00001" summary="DocuInterna">
       <created>1592015715226</created>
@@ -141,10 +147,10 @@
       <screen x="72" y="27" width="1294" height="741" />
     </state>
     <state x="380" y="199" width="668" height="403" key="#com.intellij.fileTypes.FileTypeChooser/72.27.1294.741@72.27.1294.741" timestamp="1592171209919" />
-    <state x="515" y="257" key="#xdebugger.evaluate" timestamp="1592172672536">
+    <state x="381" y="123" width="854" height="511" key="#xdebugger.evaluate" timestamp="1592191114829">
       <screen x="72" y="27" width="1294" height="741" />
     </state>
-    <state x="515" y="257" key="#xdebugger.evaluate/72.27.1294.741@72.27.1294.741" timestamp="1592172672536" />
+    <state x="381" y="123" width="854" height="511" key="#xdebugger.evaluate/72.27.1294.741@72.27.1294.741" timestamp="1592191114829" />
     <state x="532" y="100" width="912" height="904" key="CommitChangelistDialog2" timestamp="1592015695946">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
@@ -153,38 +159,38 @@
       <screen x="72" y="27" width="1294" height="741" />
     </state>
     <state x="502" y="155" width="424" height="491" key="FileChooserDialogImpl/72.27.1294.741@72.27.1294.741" timestamp="1592170721213" />
-    <state width="1248" height="232" key="GridCell.Tab.0.bottom" timestamp="1592179764667">
+    <state width="1248" height="172" key="GridCell.Tab.0.bottom" timestamp="1592191541079">
       <screen x="72" y="27" width="1294" height="741" />
     </state>
-    <state width="1248" height="232" key="GridCell.Tab.0.bottom/72.27.1294.741@72.27.1294.741" timestamp="1592179764667" />
-    <state width="1248" height="232" key="GridCell.Tab.0.center" timestamp="1592179764667">
+    <state width="1248" height="172" key="GridCell.Tab.0.bottom/72.27.1294.741@72.27.1294.741" timestamp="1592191541079" />
+    <state width="1248" height="172" key="GridCell.Tab.0.center" timestamp="1592191541078">
       <screen x="72" y="27" width="1294" height="741" />
     </state>
-    <state width="1248" height="232" key="GridCell.Tab.0.center/72.27.1294.741@72.27.1294.741" timestamp="1592179764667" />
-    <state width="1248" height="232" key="GridCell.Tab.0.left" timestamp="1592179764667">
+    <state width="1248" height="172" key="GridCell.Tab.0.center/72.27.1294.741@72.27.1294.741" timestamp="1592191541078" />
+    <state width="1248" height="172" key="GridCell.Tab.0.left" timestamp="1592191541078">
       <screen x="72" y="27" width="1294" height="741" />
     </state>
-    <state width="1248" height="232" key="GridCell.Tab.0.left/72.27.1294.741@72.27.1294.741" timestamp="1592179764667" />
-    <state width="1248" height="232" key="GridCell.Tab.0.right" timestamp="1592179764667">
+    <state width="1248" height="172" key="GridCell.Tab.0.left/72.27.1294.741@72.27.1294.741" timestamp="1592191541078" />
+    <state width="1248" height="172" key="GridCell.Tab.0.right" timestamp="1592191541078">
       <screen x="72" y="27" width="1294" height="741" />
     </state>
-    <state width="1248" height="232" key="GridCell.Tab.0.right/72.27.1294.741@72.27.1294.741" timestamp="1592179764667" />
-    <state width="1248" height="232" key="GridCell.Tab.1.bottom" timestamp="1592179765111">
+    <state width="1248" height="172" key="GridCell.Tab.0.right/72.27.1294.741@72.27.1294.741" timestamp="1592191541078" />
+    <state width="1248" height="190" key="GridCell.Tab.1.bottom" timestamp="1592191185248">
       <screen x="72" y="27" width="1294" height="741" />
     </state>
-    <state width="1248" height="232" key="GridCell.Tab.1.bottom/72.27.1294.741@72.27.1294.741" timestamp="1592179765111" />
-    <state width="1248" height="232" key="GridCell.Tab.1.center" timestamp="1592179765110">
+    <state width="1248" height="190" key="GridCell.Tab.1.bottom/72.27.1294.741@72.27.1294.741" timestamp="1592191185248" />
+    <state width="1248" height="190" key="GridCell.Tab.1.center" timestamp="1592191185248">
       <screen x="72" y="27" width="1294" height="741" />
     </state>
-    <state width="1248" height="232" key="GridCell.Tab.1.center/72.27.1294.741@72.27.1294.741" timestamp="1592179765110" />
-    <state width="1248" height="232" key="GridCell.Tab.1.left" timestamp="1592179765110">
+    <state width="1248" height="190" key="GridCell.Tab.1.center/72.27.1294.741@72.27.1294.741" timestamp="1592191185248" />
+    <state width="1248" height="190" key="GridCell.Tab.1.left" timestamp="1592191185248">
       <screen x="72" y="27" width="1294" height="741" />
     </state>
-    <state width="1248" height="232" key="GridCell.Tab.1.left/72.27.1294.741@72.27.1294.741" timestamp="1592179765110" />
-    <state width="1248" height="232" key="GridCell.Tab.1.right" timestamp="1592179765110">
+    <state width="1248" height="190" key="GridCell.Tab.1.left/72.27.1294.741@72.27.1294.741" timestamp="1592191185248" />
+    <state width="1248" height="190" key="GridCell.Tab.1.right" timestamp="1592191185248">
       <screen x="72" y="27" width="1294" height="741" />
     </state>
-    <state width="1248" height="232" key="GridCell.Tab.1.right/72.27.1294.741@72.27.1294.741" timestamp="1592179765110" />
+    <state width="1248" height="190" key="GridCell.Tab.1.right/72.27.1294.741@72.27.1294.741" timestamp="1592191185248" />
     <state width="640" height="193" key="ImportCMakeProjectWizard.bottomPanel" timestamp="1592073066410">
       <screen x="72" y="27" width="1294" height="741" />
     </state>
@@ -197,25 +203,9 @@
       <screen x="72" y="27" width="1294" height="741" />
     </state>
     <state x="383" y="174" key="run.anything.popup/72.27.1294.741@72.27.1294.741" timestamp="1592073935090" />
-    <state x="382" y="89" width="672" height="678" key="search.everywhere.popup" timestamp="1592167567401">
+    <state x="382" y="89" width="672" height="678" key="search.everywhere.popup" timestamp="1592185117503">
       <screen x="72" y="27" width="1294" height="741" />
     </state>
-    <state x="382" y="89" width="672" height="678" key="search.everywhere.popup/72.27.1294.741@72.27.1294.741" timestamp="1592167567401" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/main.cpp</url>
-          <line>9</line>
-          <option name="timeStamp" value="14" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/heap.cpp</url>
-          <line>8</line>
-          <option name="timeStamp" value="15" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <state x="382" y="89" width="672" height="678" key="search.everywhere.popup/72.27.1294.741@72.27.1294.741" timestamp="1592185117503" />
   </component>
 </project>
