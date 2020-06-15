@@ -5,6 +5,8 @@
 #include <string>
 #include "TNode.h"
 #include "TList.h"
+#include <mutex>
+
 using namespace std;
 
 class Heap
@@ -13,9 +15,10 @@ class Heap
 private:
     Heap();
     static Heap*instance;
+    static std::mutex mutex;
+
 public:
     static Heap *getInstance();
-
     TList idList;
     TList addreesList;
     TList typeList;

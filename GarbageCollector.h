@@ -42,12 +42,13 @@ public:
     [[noreturn]] void threadRun();
     Client *getClient();
 
-
+    static std::mutex mutex;
     static GarbageType type;
     static void setType(GarbageType newtype);
     static GarbageCollector* Create();
     static GarbageCollector* getInstance();
 
+    void deleteVS(int ID, List *l);
 };
 
 

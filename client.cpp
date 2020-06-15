@@ -42,6 +42,7 @@ bool Client::delRef(string id){
 
 void Client::addRef(string id){
     this->sendStrMessage("new-ref;"+id+";");
+    askAnswer();
 }
 
 string Client::update(string id, string value, string type){

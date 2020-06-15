@@ -5,9 +5,9 @@
 #include "GarbageCollector.h"
 #include "iostream"
 #include "Reader.h"
-
 GarbageType GarbageCollector::type;
 GarbageCollector* GarbageCollector::instance = 0;
+std::mutex GarbageCollector::mutex ;
 
 GarbageCollector::GarbageCollector(){
     listGarbageCollector= new List;
@@ -39,6 +39,7 @@ GarbageCollector* GarbageCollector::getInstance()
 }
 
 List * GarbageCollector::getList() {
+    mutex.lock();
     return this->listGarbageCollector;
 }
 
@@ -58,6 +59,7 @@ void GarbageCollector::deleteReferences(int ID){
         }
     }else if(type == Local) {
         getList()->deleteReferences(ID);
+        mutex.unlock();
     }
     Heap::getInstance()->deleteRef(to_string(ID));
 
@@ -68,6 +70,7 @@ void GarbageCollector::addReferences(int ID){
         client->addRef(to_string(ID));
     }else if(type == Local){
         getList()->addReferences(ID);
+        mutex.unlock();
     }
     Heap::getInstance()->addRef(to_string(ID));
 };
@@ -79,6 +82,7 @@ int GarbageCollector::addNode( void* ptr, string type){
 
     }else if(GarbageCollector::type == Local){
         id =getList()->addNode(ptr, type);
+        mutex.unlock();
     }
     Heap::getInstance()->addVSptr(to_string(id), type, "");
     return id;
@@ -105,6 +109,7 @@ void GarbageCollector::setMemory(void *dirMemory, int ID, string theType){
        address=client->update(to_string(ID), value, theType);
     }else if(type==Local){
        getList()->getNode(ID)->setDirMemory(dirMemory);
+       mutex.unlock();
 
         std::ostringstream addressh;
         addressh<< dirMemory;
@@ -114,11 +119,11 @@ void GarbageCollector::setMemory(void *dirMemory, int ID, string theType){
     Heap::getInstance()->update(to_string(ID), value, address);
 };
 
-void GarbageCollector::deleteVS(int ID){
+void GarbageCollector::deleteVS(int ID, List* l){
     string id = to_string(ID);
-    string theType = getList()->getNode(ID)->getType();
+    string theType = l->getNode(ID)->getType();
 
-    void* dirMemory= getList()->getNode(ID)->getDirMemory();
+    void* dirMemory= l->getNode(ID)->getDirMemory();
     if(theType=="b"){
         delete (static_cast<bool*>(dirMemory));
     }else if(theType=="d"){
@@ -131,7 +136,8 @@ void GarbageCollector::deleteVS(int ID){
         delete static_cast<std::string*>(dirMemory);
     }
 
-    getList()->deleteNode(ID);
+    l->deleteNode(ID);
+
     Heap::getInstance()->deleteVSptr(to_string(ID));
 }
 
@@ -140,15 +146,20 @@ Client* GarbageCollector::getClient() {
 }
 
 [[noreturn]] void GarbageCollector::threadRun() {
-    Node *present = getList()->getFirst();
+    List* l = getList();
+    Node *present = l->getFirst();
+
     while(true){
         while (present != nullptr) {
             if (present->getReferences() == 0) {
-                    deleteVS(present->getID());
+                deleteVS(present->getID(), l);
+                present = l->getFirst();
+            } else{
+                present = present->next;
             }
-            present = present->next;
         }
+        mutex.unlock();
+        this_thread::sleep_for (chrono::milliseconds (100));
         present = getList()->getFirst();
-        this_thread::sleep_for (chrono::milliseconds (250));
     }
 };

@@ -4,7 +4,7 @@
 
 #include "VSPtr.h"
 #include <typeinfo>
-#include <GarbageCollector.h>
+
 
 template<class T>
 VSPtr<T> VSPtr<T>::New()
@@ -14,6 +14,9 @@ VSPtr<T> VSPtr<T>::New()
         newVSPtr.ptr = nullptr;
     }
     string name = typeid(*newVSPtr.ptr).name();
+    if(name=="NSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE"){
+        name="s";
+    }
     newVSPtr.type=name;
     GarbageCollector g=* GarbageCollector::getInstance();
 
@@ -82,11 +85,10 @@ void VSPtr<T>::operator=(T newValue) {
 
 template<class T>
 void VSPtr<T>::operator=(VSPtr vsptr) {
-    GarbageCollector::getInstance()->deleteReferences(ID);
 
+    GarbageCollector::getInstance()->deleteReferences(ID);
     ptr = vsptr.ptr;
     ID = vsptr.ID;
-
     GarbageCollector::getInstance()->addReferences(vsptr.ID);
 }
 

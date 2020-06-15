@@ -79,10 +79,10 @@ void TList::deletePos(int pos) {
         while (i != pos-1){
             temp1 = temp1->next;
             temp2 = temp2->next;
-            i=+1;
+            i+=1;
         }
         TNode *aux = temp2;
-        if(pos<largo-1) {
+        if(pos<largo) {
             temp1->next = temp2->next;
         }else{
             temp1->next= nullptr;

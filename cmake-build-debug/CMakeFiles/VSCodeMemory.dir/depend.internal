@@ -36,16 +36,16 @@ CMakeFiles/VSCodeMemory.dir/TNode.cpp.o
  /home/brayan/Documents/Projects/VSCodeMemory/VSCodeMemory/TNode.cpp
  /home/brayan/Documents/Projects/VSCodeMemory/VSCodeMemory/TNode.h
 CMakeFiles/VSCodeMemory.dir/VSPtr.cpp.o
- ../GarbageCollector.h
- ../List.h
- ../Node.h
- ../TList.h
- ../TNode.h
- ../client.h
- ../heap.h
- ../json.h
+ /home/brayan/Documents/Projects/VSCodeMemory/VSCodeMemory/GarbageCollector.h
+ /home/brayan/Documents/Projects/VSCodeMemory/VSCodeMemory/List.h
+ /home/brayan/Documents/Projects/VSCodeMemory/VSCodeMemory/Node.h
+ /home/brayan/Documents/Projects/VSCodeMemory/VSCodeMemory/TList.h
+ /home/brayan/Documents/Projects/VSCodeMemory/VSCodeMemory/TNode.h
  /home/brayan/Documents/Projects/VSCodeMemory/VSCodeMemory/VSPtr.cpp
  /home/brayan/Documents/Projects/VSCodeMemory/VSCodeMemory/VSPtr.h
+ /home/brayan/Documents/Projects/VSCodeMemory/VSCodeMemory/client.h
+ /home/brayan/Documents/Projects/VSCodeMemory/VSCodeMemory/heap.h
+ /home/brayan/Documents/Projects/VSCodeMemory/VSCodeMemory/json.h
 CMakeFiles/VSCodeMemory.dir/client.cpp.o
  /home/brayan/Documents/Projects/VSCodeMemory/VSCodeMemory/GarbageCollector.h
  /home/brayan/Documents/Projects/VSCodeMemory/VSCodeMemory/List.h

@@ -40,11 +40,11 @@ CMakeFiles/VSCodeMemory.dir/VSPtr.cpp.o: ../List.h
 CMakeFiles/VSCodeMemory.dir/VSPtr.cpp.o: ../Node.h
 CMakeFiles/VSCodeMemory.dir/VSPtr.cpp.o: ../TList.h
 CMakeFiles/VSCodeMemory.dir/VSPtr.cpp.o: ../TNode.h
+CMakeFiles/VSCodeMemory.dir/VSPtr.cpp.o: ../VSPtr.cpp
+CMakeFiles/VSCodeMemory.dir/VSPtr.cpp.o: ../VSPtr.h
 CMakeFiles/VSCodeMemory.dir/VSPtr.cpp.o: ../client.h
 CMakeFiles/VSCodeMemory.dir/VSPtr.cpp.o: ../heap.h
 CMakeFiles/VSCodeMemory.dir/VSPtr.cpp.o: ../json.h
-CMakeFiles/VSCodeMemory.dir/VSPtr.cpp.o: ../VSPtr.cpp
-CMakeFiles/VSCodeMemory.dir/VSPtr.cpp.o: ../VSPtr.h
 
 CMakeFiles/VSCodeMemory.dir/client.cpp.o: ../GarbageCollector.h
 CMakeFiles/VSCodeMemory.dir/client.cpp.o: ../List.h

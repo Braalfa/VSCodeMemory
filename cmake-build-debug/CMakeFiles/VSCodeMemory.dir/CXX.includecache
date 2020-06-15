@@ -67,6 +67,8 @@ TNode.h
 /home/brayan/Documents/Projects/VSCodeMemory/VSCodeMemory/TNode.h
 TList.h
 /home/brayan/Documents/Projects/VSCodeMemory/VSCodeMemory/TList.h
+mutex
+-
 
 /home/brayan/Documents/Projects/VSCodeMemory/VSCodeMemory/json.h
 cstring

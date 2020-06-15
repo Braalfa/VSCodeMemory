@@ -1,7 +1,7 @@
 #include <thread>
 #include "heap.h"
 #include "Reader.h"
-
+#include <mutex>
 Heap* Heap::instance = nullptr;
 
 Heap *Heap::getInstance() {
