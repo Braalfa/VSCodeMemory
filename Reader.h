@@ -7,7 +7,9 @@
 
 #include "iostream"
 #include "client.h"
-
+/**
+ * Esta clase la utilizamos para leer y comparar datos e infomacion con los datos generados por la etenxion de VSCode
+ */
 using namespace std;
 class Reader {
 public:

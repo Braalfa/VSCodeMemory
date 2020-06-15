@@ -9,6 +9,10 @@ GarbageType GarbageCollector::type;
 GarbageCollector* GarbageCollector::instance = 0;
 std::mutex GarbageCollector::mutex ;
 
+/**
+ * Incializa el grabage collecotr reisa el tipo de garvage el cual crea e inicialisa una lista para guradar la infomracion
+ * del vsptr
+ */
 GarbageCollector::GarbageCollector(){
     listGarbageCollector= new List;
     client=new Client;
@@ -23,8 +27,10 @@ GarbageCollector::GarbageCollector(){
         }
     }
 }
-
-
+/**
+ * Al ser el garbageCollector creado por un singelton este solo genera una misma intacia
+ * @return
+ */
 GarbageCollector* GarbageCollector::getInstance()
 {
     if (instance == 0)
@@ -37,7 +43,10 @@ GarbageCollector* GarbageCollector::getInstance()
     }
     return instance;
 }
-
+/**
+ *
+ * @return la lista donde se encuentran guardada la informacion de los vsptrs
+ */
 List * GarbageCollector::getList() {
     mutex.lock();
     return this->listGarbageCollector;
@@ -46,11 +55,17 @@ List * GarbageCollector::getList() {
 // Factory method to create objects of different types.
 // Change is required only in this function to create a new object type
 
-
+/**
+ * Cambia el tipo del GarbageCollecotr
+ * @param newtype
+ */
 void GarbageCollector::setType(GarbageType newtype){
     type=newtype;
 }
-
+/**
+ * ELimina una referencia al VSPtr que pisea esa referencia
+ * @param ID elimina una referencia en los ID
+ */
 void GarbageCollector::deleteReferences(int ID){
     if(type == Remote){
         bool empty=client->delRef(to_string(ID));
@@ -64,7 +79,10 @@ void GarbageCollector::deleteReferences(int ID){
     Heap::getInstance()->deleteRef(to_string(ID));
 
 };
-
+/**
+ * Añade una refencia al nodo en la lista que pose ese ID en especifico
+ * @param ID el valaor unico para todos los VSPtr
+ */
 void GarbageCollector::addReferences(int ID){
     if(type == Remote){
         client->addRef(to_string(ID));
@@ -74,7 +92,12 @@ void GarbageCollector::addReferences(int ID){
     }
     Heap::getInstance()->addRef(to_string(ID));
 };
-
+/**
+ * Añade un nuevo nodo a la lista enlazada
+ * @param ptr la direccion de memeoria que se añade a ls lista
+ * @param type el tipode dato que es añadidp
+ * @return
+ */
 int GarbageCollector::addNode( void* ptr, string type){
     int id=-1;
     if(GarbageCollector::type == Remote){
@@ -87,7 +110,12 @@ int GarbageCollector::addNode( void* ptr, string type){
     Heap::getInstance()->addVSptr(to_string(id), type, "");
     return id;
 };
-
+/**
+ *
+ * @param dirMemory
+ * @param ID
+ * @param theType
+ */
 void GarbageCollector::setMemory(void *dirMemory, int ID, string theType){
 
     string address;
@@ -118,7 +146,11 @@ void GarbageCollector::setMemory(void *dirMemory, int ID, string theType){
 
     Heap::getInstance()->update(to_string(ID), value, address);
 };
-
+/**
+ * Funcion que se utiliza pra elimitar un vsptr especifico
+ * @param ID el ID del VSPtr especifica que quiero elimiar
+ * @param l la lista con los vsptr creados
+ */
 void GarbageCollector::deleteVS(int ID, List* l){
     string id = to_string(ID);
     string theType = l->getNode(ID)->getType();
@@ -140,11 +172,16 @@ void GarbageCollector::deleteVS(int ID, List* l){
 
     Heap::getInstance()->deleteVSptr(to_string(ID));
 }
-
+/**
+ *
+ * @return retorna lun cliente
+ */
 Client* GarbageCollector::getClient() {
     return this->client;
 }
-
+/**
+ * Este es un hilo el cual se ejecuta para la eliminacion de los nodos los cuales llegan a 0 refenrecias
+ */
 [[noreturn]] void GarbageCollector::threadRun() {
     List* l = getList();
     Node *present = l->getFirst();

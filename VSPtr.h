@@ -8,9 +8,13 @@
 #include "GarbageCollector.h"
 #include "iostream"
 
-
 using namespace std;
 
+/**
+ * La clase VSPtr va a simular el funcionamiento de un puntero,dicha clase va a almacenar un ID,el tipo de de dato que guarda
+ * el ptr y el valor de este.
+ * @tparam T este parametro determinar el tipo de dato con el que se va a trabajar ya sea int,bool,doubles,string ...
+ */
 template <class T>
 class VSPtr
 {

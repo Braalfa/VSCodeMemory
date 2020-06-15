@@ -20,7 +20,10 @@ using namespace std;
 enum GarbageType {
     Local,    Remote
 };
-
+/**
+ * El garbage collector es la clase donde se manejan mis VSPtr esta gurada informacion y esta al tanto sobre la modificacion
+ * de la informacion de esta o en caso de que nadie este referenciado a un VSPtr en especifico lo elimina
+ */
 class GarbageCollector
 {
 protected:
