@@ -1,1 +1,0 @@
-cmd_Release/obj.target/server.so := g++ -o Release/obj.target/server.so -shared -pthread -rdynamic -m64  -Wl,-soname=server.so -Wl,--whole-archive ./Release/obj.target/server/Node.o -Wl,--no-whole-archive 

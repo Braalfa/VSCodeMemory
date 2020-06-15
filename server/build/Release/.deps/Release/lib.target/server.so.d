@@ -1,1 +1,0 @@
-cmd_Release/lib.target/server.so := ln -f "Release/obj.target/server.so" "Release/lib.target/server.so" 2>/dev/null || (rm -rf "Release/lib.target/server.so" && cp -af "Release/obj.target/server.so" "Release/lib.target/server.so")

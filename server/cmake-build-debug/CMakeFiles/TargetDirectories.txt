@@ -1,3 +1,0 @@
-/home/brayan/Documents/Projects/server/cmake-build-debug/CMakeFiles/rebuild_cache.dir
-/home/brayan/Documents/Projects/server/cmake-build-debug/CMakeFiles/edit_cache.dir
-/home/brayan/Documents/Projects/server/cmake-build-debug/CMakeFiles/server.dir
