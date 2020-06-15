@@ -14,7 +14,7 @@
 using namespace std;
 
 /**
- *
+ * Metodo constructor del cliente que establece el socket en 0 al ser el socket de entrada
  */
 Client::Client(){
     sock=0;
@@ -22,9 +22,9 @@ Client::Client(){
 
 
 /**
- *
- * @param type
- * @return
+ *  Metodo para solicitar la creacion de un nuevo puntero en el servidor
+ * @param type Tipo del dato
+ * @return ID generado
  */
 string Client::newVSptr(string type){
     Json::Value root;
@@ -39,9 +39,9 @@ string Client::newVSptr(string type){
     return id;
 }
 /**
- *
- * @param id
- * @return
+ * Metodo para solicitar que se elimine una referencia del puntero indicado
+ * @param id Id del puntero indicado
+ * @return Booleano que indica si ya no quedan referencias de dicho dato
  */
 
 bool Client::delRef(string id){
@@ -50,14 +50,21 @@ bool Client::delRef(string id){
     return answer == "1";
 }
 /**
- *
- * @param id
+ * Metodo para agregar una referencia al puntero
+ * @param id ID del puntero en el GarbageCollector
  */
 void Client::addRef(string id){
     this->sendStrMessage("new-ref;"+id+";");
     askAnswer();
 }
 
+/**
+ * Metodo para actualizar la informacion del puntero en el servidor
+ * @param id ID del puntero
+ * @param value Valor al que apuntara el puntero
+ * @param type Tipo de dato del puntero
+ * @return Retorna la direccion de memoria del dato creado
+ */
 string Client::update(string id, string value, string type){
     Json::Value root;
     root["data"] = value;
@@ -69,10 +76,11 @@ string Client::update(string id, string value, string type){
 
     return askAnswer();
 }
+
 /**
- *
- * @param message
- * @return
+ * Metodo para convertir un String en Json Value
+ * @param message Mensaje a convertir a json
+ * @return Json Value con la informacion
  */
 
 Json::Value toJson(string message){
@@ -84,8 +92,8 @@ Json::Value toJson(string message){
     return val;
 }
 /**
- *
- * @param credentials
+ * Metodo para guardar las credenciales generadas por el servidor en manera de formato json
+ * @param credentials String con las credenciales enviadas por el servidor
  */
 void Client::saveCredentials(string credentials){
     Json::Value value=toJson(credentials);
@@ -98,8 +106,8 @@ void Client::saveCredentials(string credentials){
     file.close();
 }
 /**
- *
- * @param messageSt
+ *  Metodo para enviar mensajes al servidor
+ * @param messageSt Mensaje a enviar al servidor
  */
 void Client::sendStrMessage(string messageSt){
     char mess[messageSt.size()+1];
@@ -107,8 +115,8 @@ void Client::sendStrMessage(string messageSt){
     send(sock , mess , strlen(mess), 1024 );
 }
 /**
- *
- * @return
+ *  Metodo para esperar una respuesta del servidor
+ * @return Respuesta enviada por el servidor
  */
 
 string Client::askAnswer(){
@@ -117,9 +125,9 @@ string Client::askAnswer(){
     return (string) buffer;
 }
 /**
- *
- * @param pass
- * @return
+ *  Metodo para aplicar hash md5 a una string
+ * @param pass String a codificar
+ * @return String codificado
  */
 string getmd5(string pass){
     md5wrapper md5=md5wrapper();
@@ -127,11 +135,11 @@ string getmd5(string pass){
     return pass;
 }
 /**
- *
- * @param ip
- * @param port
- * @param user
- * @param password
+ * Metodo para establecer los parametros del servidor
+ * @param ip Direccion web a la cual conectarse
+ * @param port Puerto del servidor
+ * @param user Usuario para identificarse
+ * @param password Contrasena del servidor
  */
 void Client::setServer(string ip, string port, string user, string password){
     this->ip=ip;
@@ -140,8 +148,8 @@ void Client::setServer(string ip, string port, string user, string password){
     this->password=password;
 }
 /**
- *
- * @return
+ *  Metodo para intentar loggearse
+ * @return Retorna 0 si el intento fue exitoso, y -1 en caso contrario
  */
 int Client::logIn()
 {

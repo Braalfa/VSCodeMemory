@@ -111,7 +111,7 @@ int GarbageCollector::addNode( void* ptr, string type){
     return id;
 };
 /**
- *
+ *  Metodo para establece
  * @param dirMemory
  * @param ID
  * @param theType

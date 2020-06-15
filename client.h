@@ -6,7 +6,8 @@
 
 using namespace std;
 /**
- *
+ * La clase cliente es la encargada de gestionar todo lo relacionado con el envio y recepcion de datos
+ * desde el servidor. Comunica sus resultados a quienes le llamen.
  */
 class Client
 {
