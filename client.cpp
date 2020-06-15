@@ -13,13 +13,19 @@
 #include <string>
 using namespace std;
 
-
+/**
+ *
+ */
 Client::Client(){
     sock=0;
 }
 
 
-
+/**
+ *
+ * @param type
+ * @return
+ */
 string Client::newVSptr(string type){
     Json::Value root;
     root["data"] = "";
@@ -32,14 +38,21 @@ string Client::newVSptr(string type){
     string id = this->askAnswer();
     return id;
 }
-
+/**
+ *
+ * @param id
+ * @return
+ */
 
 bool Client::delRef(string id){
     this->sendStrMessage("delete-ref;"+id+";");
     string answer= askAnswer();
     return answer == "1";
 }
-
+/**
+ *
+ * @param id
+ */
 void Client::addRef(string id){
     this->sendStrMessage("new-ref;"+id+";");
     askAnswer();
@@ -56,7 +69,11 @@ string Client::update(string id, string value, string type){
 
     return askAnswer();
 }
-
+/**
+ *
+ * @param message
+ * @return
+ */
 
 Json::Value toJson(string message){
     Json::Value val;
@@ -66,7 +83,10 @@ Json::Value toJson(string message){
         cout << "Error: " << reader.getFormattedErrorMessages();
     return val;
 }
-
+/**
+ *
+ * @param credentials
+ */
 void Client::saveCredentials(string credentials){
     Json::Value value=toJson(credentials);
 
@@ -77,33 +97,52 @@ void Client::saveCredentials(string credentials){
 
     file.close();
 }
-
+/**
+ *
+ * @param messageSt
+ */
 void Client::sendStrMessage(string messageSt){
     char mess[messageSt.size()+1];
     strcpy(mess, messageSt.c_str());
     send(sock , mess , strlen(mess), 1024 );
 }
-
+/**
+ *
+ * @return
+ */
 
 string Client::askAnswer(){
     char buffer[1024] = {0};
     read( sock , buffer, 1024);
     return (string) buffer;
 }
-
+/**
+ *
+ * @param pass
+ * @return
+ */
 string getmd5(string pass){
     md5wrapper md5=md5wrapper();
     pass=md5.getHashFromString(pass);
     return pass;
 }
-
+/**
+ *
+ * @param ip
+ * @param port
+ * @param user
+ * @param password
+ */
 void Client::setServer(string ip, string port, string user, string password){
     this->ip=ip;
     this->port=port;
     this->user=user;
     this->password=password;
 }
-
+/**
+ *
+ * @return
+ */
 int Client::logIn()
 {
     struct sockaddr_in serv_addr;

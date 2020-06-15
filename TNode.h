@@ -7,7 +7,9 @@
 
 #include <string>
 using namespace std;
-
+/**
+ * Clase para guardar valores de una lista
+ */
 class TNode {
 private:
     string value;

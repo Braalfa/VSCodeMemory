@@ -16,7 +16,9 @@ private:
     Heap();
     static Heap*instance;
     static std::mutex mutex;
-
+/**
+ * El heap es una copia de la lista que nos permite un mejor manejo de los datos a visaluzar en la interfaz
+ */
 public:
     static Heap *getInstance();
     TList idList;
