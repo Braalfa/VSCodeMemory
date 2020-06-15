@@ -6,30 +6,6 @@
 
 #IncludeRegexTransform: 
 
-/home/brayan/Documents/Projects/VSCodeMemory/VSCodeMemory/GarbageCollector.cpp
-GarbageCollector.h
-/home/brayan/Documents/Projects/VSCodeMemory/VSCodeMemory/GarbageCollector.h
-iostream
-/home/brayan/Documents/Projects/VSCodeMemory/VSCodeMemory/iostream
-Reader.h
-/home/brayan/Documents/Projects/VSCodeMemory/VSCodeMemory/Reader.h
-
-/home/brayan/Documents/Projects/VSCodeMemory/VSCodeMemory/GarbageCollector.h
-VSPtr.h
-/home/brayan/Documents/Projects/VSCodeMemory/VSCodeMemory/VSPtr.h
-List.h
-/home/brayan/Documents/Projects/VSCodeMemory/VSCodeMemory/List.h
-client.h
-/home/brayan/Documents/Projects/VSCodeMemory/VSCodeMemory/client.h
-string
--
-
-/home/brayan/Documents/Projects/VSCodeMemory/VSCodeMemory/List.h
-Node.h
-/home/brayan/Documents/Projects/VSCodeMemory/VSCodeMemory/Node.h
-
-/home/brayan/Documents/Projects/VSCodeMemory/VSCodeMemory/Node.h
-
 /home/brayan/Documents/Projects/VSCodeMemory/VSCodeMemory/Reader.h
 iostream
 /home/brayan/Documents/Projects/VSCodeMemory/VSCodeMemory/iostream
@@ -54,12 +30,6 @@ string
 string
 -
 
-/home/brayan/Documents/Projects/VSCodeMemory/VSCodeMemory/VSPtr.h
-GarbageCollector.h
-/home/brayan/Documents/Projects/VSCodeMemory/VSCodeMemory/GarbageCollector.h
-iostream
-/home/brayan/Documents/Projects/VSCodeMemory/VSCodeMemory/iostream
-
 /home/brayan/Documents/Projects/VSCodeMemory/VSCodeMemory/client.h
 string
 -
@@ -67,6 +37,14 @@ json.h
 /home/brayan/Documents/Projects/VSCodeMemory/VSCodeMemory/json.h
 heap.h
 /home/brayan/Documents/Projects/VSCodeMemory/VSCodeMemory/heap.h
+
+/home/brayan/Documents/Projects/VSCodeMemory/VSCodeMemory/heap.cpp
+thread
+-
+heap.h
+/home/brayan/Documents/Projects/VSCodeMemory/VSCodeMemory/heap.h
+Reader.h
+/home/brayan/Documents/Projects/VSCodeMemory/VSCodeMemory/Reader.h
 
 /home/brayan/Documents/Projects/VSCodeMemory/VSCodeMemory/heap.h
 string

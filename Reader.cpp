@@ -21,7 +21,7 @@ void Reader::setData(string data) {
 bool Reader::isLocal() {
     ifstream archivo;
     string texto;
-    archivo.open("//home/brayan/Documents/Projects/VSCodeMemory/Library/local.txt",ios::in); //Abrimos el archivo en modo lectura
+    archivo.open("/home/brayan/Documents/Projects/VSCodeMemory/Library/local.txt",ios::in); //Abrimos el archivo en modo lectura
     getline(archivo,texto);
     archivo.close();
 

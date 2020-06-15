@@ -4,7 +4,10 @@
 #include "VSPtr.h"
 #include "List.h"
 #include "heap.h"
+#include "thread"
 int main(){
+
+    this_thread::sleep_for(chrono::seconds(3));
     VSPtr<int> v=VSPtr<int>::New();
     v=7;
 

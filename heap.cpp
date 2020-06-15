@@ -7,8 +7,6 @@ Heap* Heap::instance = nullptr;
 Heap *Heap::getInstance() {
     if(!instance){
         instance = new Heap();
-        std::thread first(&Heap::updatePanelList, instance);
-        first.detach();
     }
     return instance;
 }
@@ -63,9 +61,18 @@ void Heap::update(string id, string value, string address){
 }
 
 string Heap::updatePanelList() {
-    string newPanelList = idList.printList() + addreesList.printList() +
-            typeList.printList() + dataList.printList() + referencesList.printList();
+    string newPanelList;
+    int pos=0;
+    while (pos != idList.largo) {
+        newPanelList += idList.getNodoPos(pos)->getValue()+";";
+        newPanelList += addreesList.getNodoPos(pos)->getValue()+";";
+        newPanelList += typeList.getNodoPos(pos)->getValue()+";";
+        newPanelList += dataList.getNodoPos(pos)->getValue()+";";
+        newPanelList += referencesList.getNodoPos(pos)->getValue()+";";
+        pos += 1;
+    }
     Reader::setData(newPanelList);
+    this_thread::sleep_for(chrono::milliseconds(500));
     return newPanelList;
 }
 
