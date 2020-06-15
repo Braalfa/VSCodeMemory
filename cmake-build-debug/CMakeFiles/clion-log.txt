@@ -1,4 +1,1 @@
-/snap/clion/114/bin/cmake/linux/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /home/brayan/Documents/Projects/VSCodeMemory/VSCodeMemory
--- Configuring done
--- Generating done
--- Build files have been written to: /home/brayan/Documents/Projects/VSCodeMemory/VSCodeMemory/cmake-build-debug
+CMakeLists.txt not found in /home/brayan/Documents/Projects/VSCodeMemory/VSCodeMemory Select CMakeLists.txt file...

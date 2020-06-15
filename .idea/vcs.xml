@@ -2,5 +2,7 @@
 <project version="4">
   <component name="VcsDirectoryMappings">
     <mapping directory="$PROJECT_DIR$" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/VSMemoryExtension" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/server/VSPtrServer" vcs="Git" />
   </component>
 </project>
